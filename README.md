@@ -1,1 +1,1 @@
-Repositório feito para anexar exercícios feitos no decorrer do curso da Trybe
+Exercícios para bloco 2 da Trybe
