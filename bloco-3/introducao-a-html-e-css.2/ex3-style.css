@@ -1,0 +1,10 @@
+/*1 - Coloque todo o CSS criado até agora nos exercícios anteriores em um arquivo externo.*/
+h1 {font-size: 65px; color: orange;}
+ul {background-color: yellow;}
+.corf {background-color: yellowgreen;}
+h1 {font-family: sans-serif; font-style: oblique;}
+p {font-weight: 600; font-size: 3em; line-height: 5ex;}
+body {font-size: 16px; text-align: justify;}
+#am {text-decoration: purple; background-color: yellow;}
+#vm {background-color: red;}
+#mr {background-color: brown;}
