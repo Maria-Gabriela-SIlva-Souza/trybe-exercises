@@ -1,0 +1,27 @@
+div:hover {
+    background-color: blueviolet;
+}
+
+.prim {
+    color: chartreuse;
+    font-style: italic;
+}
+
+.sec {
+    color: chocolate;
+}
+
+.ter {
+    color: cornflowerblue;
+    font-size: x-large;
+    font-style: italic;
+}
+
+.esc {
+    color: crimson;
+}
+
+.cla {
+    color: darkblue;
+    font-style: italic;
+}
