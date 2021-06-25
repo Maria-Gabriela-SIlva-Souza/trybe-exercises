@@ -1,0 +1,9 @@
+/* Utilizando for , crie um array que vá de 1 até 25 e imprima o resultado;*/
+
+let contagem = [];
+
+for (let index = 1; index <= 25; index += 1){
+        contagem.push(index);
+}
+
+console.log (contagem);
