@@ -59,30 +59,32 @@
     <script>
       // COLOQUE SEU CÓDIGO AQUI
 
-      //Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+      //1. Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
       let body = document.querySelector ('body');
       let h1 = document.createElement ('h1');
       body.appendChild(h1);
       h1.id = 'ex1';
       document.getElementById ('ex1').innerText = 'Exercício 5.2 - JavaScript DOM como filho da tag body';
 
-			//Adicione a tag main com a classe main-content como filho da tag body ;
+			//2. Adicione a tag main com a classe main-content como filho da tag body ;
       let main = document.createElement ('main');
       body.appendChild(main);
       main.className = 'main-content';
 
-
-			//Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+			//3. Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
       let ex3 = document.querySelector ('main');
       let section = document.createElement ('section');
       ex3.appendChild(section);
       section.className = 'center-content';
 
+			//4. Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+      let ex4 = document.querySelector ('section');
+      let p = document.createElement ('p');
+      ex4.appendChild (p);
+      document.querySelector('p').innerText = 'Adicione a tag p como filho do section';
+      
 
-			//Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
-
-
-			//Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+			//5. Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
 
 
 			//Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
