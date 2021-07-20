@@ -102,7 +102,15 @@
       ex5.appendChild (ex7);
 
 
-			//Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+			//8. Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+      let ex8 = document.createElement ('ul');
+      ex6.appendChild(ex8);
+      let array = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez']
+      for (let index in array) {
+        let list = document.createElement ('li');
+        list.innerHTML = array[index];
+        ex8.appendChild(list);
+      }
 
 
 			//Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
