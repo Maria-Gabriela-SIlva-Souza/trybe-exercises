@@ -20,6 +20,8 @@
     </section>
   </main>
   <script>
+    /*PARTE 1 EXERCICIOS DE FIXAÇÃO*/
+
     /*Acesse o elemento elementoOndeVoceEsta .*/
     const elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
 
@@ -45,6 +47,28 @@
 
     /*Agora acesse o terceiroFilho a partir de pai .*/
     const terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+
+
+    /*PARTE 2 EXERCICIOS DE FIXAÇÃO*/
+
+    /*Crie um irmão para elementoOndeVoceEsta .*/
+    const irmaoElementoOndeVoceEsta = document.createElement ('section');
+    irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+    pai.appendChild (irmaoElementoOndeVoceEsta);
+    
+    /*Crie um filho para elementoOndeVoceEsta .*/
+    const filhoElementoOndeVoceEsta = document.createElement ('section');
+    filhoElementoOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
+    elementoOndeVoceEsta.appendChild (filhoElementoOndeVoceEsta);
+
+    /*Crie um filho para primeiroFilhoDoFilho .*/
+    const filhoParaPrimeiroFilhoDoFilho = document.createElement ('p');
+    filhoParaPrimeiroFilhoDoFilho.id = 'filhoParaPrimeiroFilhoDoFilho';
+    primeiroFilhoDoFilho.appendChild (filhoParaPrimeiroFilhoDoFilho);
+
+    /*A partir desse filho criado, acesse terceiroFilho .*/
+    const filhoParaPrimeiroFilhoDoFilho2 = document.getElementById ('filhoParaPrimeiroFilhoDoFilho');
+    const chegarNoTerceiroFilho = filhoParaPrimeiroFilhoDoFilho2.parentElement.parentElement.nextElementSibling;
 
   </script>  
 </body>
