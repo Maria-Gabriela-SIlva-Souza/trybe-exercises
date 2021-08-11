@@ -75,9 +75,9 @@
 
       /*4.Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;*/
       const adicionaP = document.createElement ('p');
-      const tagSection = document.getElementsByClassName ('center-content') [0];
+      const tagSectionCenter = document.getElementsByClassName ('center-content') [0];
       adicionaP.innerText = 'Aprendendo a inplementar tags';
-      tagSection.appendChild (adicionaP);
+      tagSectionCenter.appendChild (adicionaP);
 
       /*5.Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;*/
       const sectionEx5 = document.createElement ('section');
@@ -97,6 +97,18 @@
       tagSectionEx5.appendChild (imgEx7);
 
       /*8.Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;*/
+      //
+      const ulEx8 = document.createElement ('ul'); //criando ul
+      const tagSectionRight = document.getElementsByClassName ('right-content') [0]; //local onde será colocada a ul
+      tagSectionRight.appendChild (ulEx8); //Adicionando lista não ordenada
+      const numeros = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez']; //array com elementos da li
+      for (index = 0; index < numeros.length; index += 1) { //for percorrendo todo o array
+        const liEx8 = document.createElement ('li'); //criação da li
+        const numeracao = numeros[index]; //constante que armazena individualmente cada valor do array
+        liEx8.innerText = numeracao; //inclusão do valor de cada array na li
+        ulEx8.appendChild (liEx8); //inclusão das li's na ul
+      }
+
       /*9.Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.*/
       /*10.Adicione a classe title na tag h1 criada;*/
       /*11.Adicione a classe description nas 3 tags h3 criadas;*/
