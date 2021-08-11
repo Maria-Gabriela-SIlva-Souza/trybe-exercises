@@ -31,4 +31,10 @@ input.addEventListener ('input', function(event) { //Cria evento no input, com o
   classeTech.innerText = event.target.value; //no elemento da classe tech, atribui no evento próprio o valor inserido na mesma
 });
 
+/*3. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
+redirecione para alguma página;
+1. Que tal redirecionar para seu portifólio?*/
+myWebpage.addEventListener ('dblclick', function () {
+  window.location.replace('https://blog.betrybe.com/'); // a ação disparada é pegar a URL atual com window.location e substituir por outro link usando .replace('https://blog.betrybe.com/') .
+});
 
