@@ -24,34 +24,34 @@ Exercício 1:
 */
 let dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-function dayMonth () {
-  let ul = document.getElementById ('days');
+function dayMonth() {
+  let ul = document.getElementById('days');
 
-  for (let index = 0; index < dezDaysList.length; index +=1){
+  for (let index = 0; index < dezDaysList.length; index += 1) {
     let daysList = dezDaysList[index];
-    let li = document.createElement ('li');
+    let li = document.createElement('li');
 
     if (daysList === 24 | daysList === 31) {
       li.innerHTML = daysList;
       li.className = 'day holiday';
-      ul.appendChild (li);
+      ul.appendChild(li);
     } else if (daysList === 4 | daysList === 11 | daysList === 18) {
       li.innerHTML = daysList;
       li.className = 'day fryday';
-      ul.appendChild (li);
+      ul.appendChild(li);
     } else if (daysList === 25) {
       li.innerHTML = daysList;
       li.className = 'day holiday fryday';
-      ul.appendChild (li);
+      ul.appendChild(li);
     } else {
       li.innerHTML = daysList;
       li.className = 'day';
-      ul.appendChild (li);
+      ul.appendChild(li);
     }
   };
 };
 
-dayMonth ();
+dayMonth();
 
 /*
 Exercício 2:
@@ -59,27 +59,45 @@ Implemente uma função que receba como parâmetro a string "Feriados" e crie di
 Adicione a este botão a ID "btn-holiday" .
 Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 */
-function stringHolliday (receiveString) {
-  let buttonContainer = document.querySelector ('.buttons-container');
-  let createButton = document.createElement ('button'); 
+function stringHolliday(receiveString) {
+  let buttonContainer = document.querySelector('.buttons-container');
+  let createButton = document.createElement('button');
   createButton.id = 'btn-holiday';
   createButton.innerHTML = receiveString;
-  buttonContainer.appendChild (createButton);
+  buttonContainer.appendChild(createButton);
 }
-stringHolliday ('Feriados');
+stringHolliday('Feriados');
 
 /*
 Exercício 3:
 Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
 É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
 */
+function changeColor() {
+  let btnHolliday = document.getElementById('btn-holiday');
+  let newColor = 'green';
+  let classHolliday = document.getElementsByClassName('holiday');
+  let originColor = 'rgb(238,238,238)';
+
+  btnHolliday.addEventListener('click', function () {
+    for (let index = 0; index < classHolliday.length; index += 1) {
+      if (classHolliday[index].style.backgroundColor === newColor) {
+        classHolliday[index].style.backgroundColor = originColor;
+      } else {
+        classHolliday[index].style.backgroundColor = newColor;
+      }
+    }
+  })
+};
+
+changeColor();
 
 /*
-Exercício 4:
-Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
-Adicione a este botão o ID "btn-friday" .
-Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
-*/
+  Exercício 4:
+  Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+  Adicione a este botão o ID "btn-friday" .
+  Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+  */
 
 /*
 Exercício 5:
