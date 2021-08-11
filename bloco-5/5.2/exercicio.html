@@ -68,10 +68,10 @@
       document.body.appendChild (adicionaMain);
 
       /*3.Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;*/
-      const adicionaSection = document.createElement ('section');
-      adicionaSection.className = 'center-content';
+      const sectionEx3 = document.createElement ('section');
+      sectionEx3.className = 'center-content';
       const tagMain = document.getElementsByClassName ('main-content')[0];
-      tagMain.appendChild (adicionaSection);
+      tagMain.appendChild (sectionEx3);
 
       /*4.Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;*/
       const adicionaP = document.createElement ('p');
@@ -80,11 +80,15 @@
       tagSection.appendChild (adicionaP);
 
       /*5.Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;*/
-      const adicionaOutraSection = document.createElement ('section');
-      adicionaOutraSection.className = 'left-content';
-      tagMain.appendChild (adicionaOutraSection);
+      const sectionEx5 = document.createElement ('section');
+      sectionEx5.className = 'left-content';
+      tagMain.appendChild (sectionEx5);
 
       /*6.Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;*/
+      const sectionEx6 = document.createElement ('section');
+      sectionEx6.className = 'right-content';
+      tagMain.appendChild (sectionEx6);
+
       /*7.Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;*/
       /*8.Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;*/
       /*9.Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.*/
