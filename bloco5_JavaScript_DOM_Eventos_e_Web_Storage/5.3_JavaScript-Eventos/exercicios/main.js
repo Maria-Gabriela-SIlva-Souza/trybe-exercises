@@ -37,11 +37,11 @@ function dayMonth() {
       ul.appendChild(li);
     } else if (daysList === 4 | daysList === 11 | daysList === 18) {
       li.innerHTML = daysList;
-      li.className = 'day fryday';
+      li.className = 'day friday';
       ul.appendChild(li);
     } else if (daysList === 25) {
       li.innerHTML = daysList;
-      li.className = 'day holiday fryday';
+      li.className = 'day holiday friday';
       ul.appendChild(li);
     } else {
       li.innerHTML = daysList;
@@ -113,6 +113,24 @@ Exercício 5:
 Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
 É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
 */
+function changeText (fridaysArray) {
+  let buttonFriday = document.getElementById ('btn-friday');
+  let fryday = document.getElementsByClassName ('friday');
+  let sextou = 'Sextou';
+
+  buttonFriday.addEventListener ('click', function () {
+    for (index = 0; index < fryday.length; index +=1){
+      if (fryday[index].innerHTML !== sextou ) {
+        fryday[index].innerHTML = sextou;
+      } else {
+        fryday[index].innerHTML = fridaysArray[index]; 
+      }
+    }
+  })
+}
+let dezFridays = [ 4, 11, 18, 25 ];
+
+changeText (dezFridays);
 
 /*
 Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
