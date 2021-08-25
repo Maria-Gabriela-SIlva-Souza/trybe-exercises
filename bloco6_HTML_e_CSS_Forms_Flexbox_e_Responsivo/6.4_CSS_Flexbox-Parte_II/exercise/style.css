@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+}
+
+body {
+  background-color: rgb(247, 247, 247);
+}
+
+.header-container {
+  background-color: #5C687C;
+  display: flex;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-container {
+  display: flex;
+}
+
+.menu-container ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.menu-container li {
+  color: white;
+  font-weight: 500;
+  font-size: 1.3rem;
+  list-style: none;
+  margin-right: 10px;
+}
+
+/* PARTE 1 */
+
+/* 1 - Adicione uma propriedade que defina o tamanho Flexbox base para o container da imagem 268px e para o container do menu 500px . */
+
+.logo-container {
+  display: flex;
+  flex-basis: 268px;
+}
+
+.menu-container {
+  display: flex;
+  flex-basis: 500px;
+}
+
+/* 2 - Adicione uma propriedade Flexbox que modifique a ordem em que a logomarca e os itens do menu aparecem na tela. Após aplicar a propriedade o header deverá estar similar a imagem abaixo: */
+
+.logo-container {
+  order: 1;
+}
+
+.menu-container {
+  order: 2;
+}
+
+/* 3 - Adicione uma propriedade Flexbox que modifique o tamanho padrão do container do menu quando a largura da página for maior que 768px . */
+
+.menu-container {
+  flex-grow: 1;
+}
+
+/* 4 - Utilize a propriedade align-self no elemento correto para que o header da página tenha o seguinte comportamento: */
+
+.menu-container {
+  align-self: center;
+}
+
+
+
+/* PARTE 2 */
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-container h2 {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-container div {
+  align-items: center;
+  background-color: #5C687C;
+  border: black solid 1px;
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.aside-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.aside-container h3, h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.aside-container p {
+  margin: 10px 0;
+  text-align: justify;
+}
+
