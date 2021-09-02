@@ -46,3 +46,6 @@ assert.deepStrictEqual(person1, person2, 'Erro: person1 e person2 não são estr
 const person3 = { name: 'john', age: 19 };
 
 assert.notDeepStrictEqual(person1, person3, 'Erro: os valores dos objetos são estritamente iguais');
+//Para que o teste falhe, experimente passar como segundo parâmetro para o último teste o objeto person2 . Você verá que o teste irá falhar, pois ele espera que os valores dos objetos passados como argumento sejam diferentes.
+
+
