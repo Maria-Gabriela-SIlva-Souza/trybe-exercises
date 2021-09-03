@@ -33,7 +33,7 @@ const musicas = [{
 ]
 
 function findMusic(id) {
-  return musicas.find((musica) => musica.id === id);
+  return musicas.find((musicas) => musicas.id === id);
 }
 
 console.log(findMusic('31031685'));
