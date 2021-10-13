@@ -33,34 +33,17 @@ class Form extends Component {
 
           <label htmlFor="name">
             Nome:
-            <input
-              id="name"
-              name="name"
-              type="text"
-              onChange={ this.handleChange }
-              value={ name }
-            />
+            <input id="name" name="name" type="text" onChange={ this.handleChange } value={ name } />
           </label>
 
           <label htmlFor="email">
             Email:
-            <input
-              id="email"
-              name="email"
-              type="email"
-              onChange={ this.handleChange }
-              value={ email }
-            />
+            <input id="email" name="email" type="email" onChange={ this.handleChange } value={ email } />
           </label>
 
           <label htmlFor="age">
             Idade:
-            <select
-              id="age"
-              name="age"
-              onChange={ this.handleChange }
-              value={ age }
-            >
+            <select id="age" name="age" onChange={ this.handleChange } value={ age }>
               <option value="">Selecione</option>
               <option value="adult">Maior que 18</option>
               <option value="underage">Menor que 18</option>
@@ -69,12 +52,7 @@ class Form extends Component {
 
           <label htmlFor="anecdote">
             Anedota:
-            <textarea
-              id="anecdote"
-              name="anecdote"
-              onChange={ this.handleChange }
-              value={ anecdote }
-            />
+            <textarea id="anecdote" name="anecdote" onChange={ this.handleChange } value={ anecdote } />
           </label>
 
         </form>
