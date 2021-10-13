@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Button extends React.Component {
+  render() {
+    /* A função que altera o estado do componente pai chega
+       ao componente filho via `props`! */
+    const { handleClick } = this.props;
+
+    return (<button type="button" onClick={handleClick} >Contar clique!</button>);
+  }
 }
 
-export default App;
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.handleClick = this.handleClick.bind(this);
+
+    // O componente pai é o dono do estado!
+    this.state = {
+      numeroDeCliques: 0,
+    };
+  }
+
+  /* A função de alterar o estado é definida no componente pai*/
+  handleClick() {
+    this.setState((estadoAnterior) => ({
+      numeroDeCliques: estadoAnterior.numeroDeCliques + 1,
+    }));
+  }
+
+  /* O componente filho recebe a função de alterar estado do pai via `props`,
+     na forma de uma callback */
+  render() {
+    return (
+      <div>
+        <h1>{`${this.state.numeroDeCliques} cliques!`}</h1>
+        <Button handleClick={this.handleClick} />
+      </div>
+    );
+  }
+}
+
+export default App
