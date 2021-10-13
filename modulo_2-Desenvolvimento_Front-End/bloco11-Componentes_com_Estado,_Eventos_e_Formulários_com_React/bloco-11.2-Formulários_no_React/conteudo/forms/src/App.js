@@ -29,30 +29,17 @@ class Form extends Component {
 
           <label htmlFor="name">
             Nome:
-            <input
-              id="name"
-              name="name"
-              type="text"
-            />
+            <input id="name" name="name" type="text" />
           </label>
 
           <label htmlFor="email">
             Email:
-            <input
-              id="email"
-              name="email"
-              type="email"
-              onChange={ this.handleChange }
-              value={ email }
-            />
+            <input id="email" name="email" type="email" onChange={ this.handleChange } value={ email } />
           </label>
 
           <label htmlFor="age">
             Idade:
-            <select
-              id="age"
-              name="age"
-              defaultValue=""
+            <select id="age" name="age" defaultValue=""
             >
               <option value="">Selecione</option>
               <option value="adult">Maior que 18</option>
