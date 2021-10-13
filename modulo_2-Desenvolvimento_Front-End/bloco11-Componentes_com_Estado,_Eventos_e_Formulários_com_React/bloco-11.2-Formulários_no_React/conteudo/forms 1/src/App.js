@@ -30,30 +30,39 @@ class Form extends Component {
       <div>
         <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
         <form className="form">
+          <fieldset>
+            <label htmlFor="name">
+              Nome:
+              <input id="name" name="name" type="text" onChange={ this.handleChange } value={ name } />
+            </label>
 
-          <label htmlFor="name">
-            Nome:
-            <input id="name" name="name" type="text" onChange={ this.handleChange } value={ name } />
-          </label>
+            <label htmlFor="email">
+              Email:
+              <input id="email" name="email" type="email" onChange={ this.handleChange } value={ email } />
+            </label>
 
-          <label htmlFor="email">
-            Email:
-            <input id="email" name="email" type="email" onChange={ this.handleChange } value={ email } />
-          </label>
+            <label htmlFor="age">
+              Idade:
+              <select id="age" name="age" onChange={ this.handleChange } value={ age }>
+                <option value="">Selecione</option>
+                <option value="adult">Maior que 18</option>
+                <option value="underage">Menor que 18</option>
+              </select>
+            </label>
+            </fieldset>
 
-          <label htmlFor="age">
-            Idade:
-            <select id="age" name="age" onChange={ this.handleChange } value={ age }>
-              <option value="">Selecione</option>
-              <option value="adult">Maior que 18</option>
-              <option value="underage">Menor que 18</option>
-            </select>
-          </label>
+          <fieldset>
+            <label htmlFor="anecdote">
+              Anedota:
+              <textarea id="anecdote" name="anecdote" onChange={ this.handleChange } value={ anecdote } />
+            </label>
+          </fieldset>
 
-          <label htmlFor="anecdote">
-            Anedota:
-            <textarea id="anecdote" name="anecdote" onChange={ this.handleChange } value={ anecdote } />
-          </label>
+          <fieldset>
+            Escolha um arquivo para anexar
+            <br></br> 
+            <input type="file" /> 
+          </fieldset>      
 
         </form>
       </div>
