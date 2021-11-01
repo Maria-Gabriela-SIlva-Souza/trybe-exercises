@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokemon from './Pokemon';
+import Poke from './Poke';
 
 
 class Pokedex extends React.Component {
@@ -7,7 +7,7 @@ class Pokedex extends React.Component {
     const { pokemons } = this.props;
     return ( 
       <div className="pokedex">
-        {pokemons.map(pokemons => <Pokemon key={pokemons.id} pokemon={pokemons} />)}
+        {pokemons.map(pokemons => <Poke key={pokemons.id} pokemon={pokemons} />)}
       </div>
     )
   }
