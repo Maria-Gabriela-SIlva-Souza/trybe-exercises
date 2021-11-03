@@ -8,26 +8,38 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this)
     this.handleClickAgain = this.handleClickAgain.bind(this)
     this.handleClickOneMore = this.handleClickOneMore.bind(this)
+  
+    this.state = {
+      numHandleClick: 0,
+      numHandleClickAgain: 0,
+      numHandleClickOneMore: 0
+    }
   }
 
   handleClick() {
-    console.log('Clicou no primeiro botão!')
+    this.setState((estadoAnterior, _props) => ({
+      numHandleClick: estadoAnterior.numHandleClick + 1
+    }))
   }
   
   handleClickAgain() {
-    console.log('Clicou no segundo botão!')
+    this.setState((estadoAnterior, _props) => ({
+      numHandleClickAgain: estadoAnterior.numHandleClickAgain + 1
+    }))
   }
   
   handleClickOneMore() {
-    console.log('Clicou no terceiro botão!')
+    this.setState((estadoAnterior, _props) => ({
+      numHandleClickOneMore: estadoAnterior.numHandleClickOneMore + 1
+    }))
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>Meu botão</button>
-        <button onClick={this.handleClickAgain}>Meu outro botão</button>
-        <button onClick={this.handleClickOneMore}>Mais um botão</button>
+        <button onClick={this.handleClick}>Meu botão {this.state.numHandleClick}</button>
+        <button onClick={this.handleClickAgain}>Meu outro botão {this.state.numHandleClickAgain}</button>
+        <button onClick={this.handleClickOneMore}>Mais um botão {this.state.numHandleClickOneMore} </button>
       </div>
     )
   }
