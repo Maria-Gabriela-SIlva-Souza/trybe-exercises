@@ -49,6 +49,7 @@ class App extends React.Component {
     return (
       <div>
         <button onClick={this.handleClick} style={{backgroundColor: this.colorGreen(numHandleClick)}}>
+          {/* O  backgroundColor fica em duas {{}}, porque a primeira é para trabalhar com JavaScript, e a segunda chave é porque o react interpreta tudo como objeto*/}
           Meu botão {this.state.numHandleClick}
         </button>
 
