@@ -17,29 +17,48 @@ class App extends React.Component {
   }
 
   handleClick() {
-    this.setState((estadoAnterior, _props) => ({
-      numHandleClick: estadoAnterior.numHandleClick + 1
-    }))
+    this.setState(({numHandleClick}) => ({
+      numHandleClick: numHandleClick + 1
+    }), () => {
+      console.log(`Meu botão ${this.colorGreen(this.state.numHandleClick)}`);
+    })
   }
   
   handleClickAgain() {
-    this.setState((estadoAnterior, _props) => ({
-      numHandleClickAgain: estadoAnterior.numHandleClickAgain + 1
-    }))
+    this.setState(({numHandleClickAgain}) => ({
+      numHandleClickAgain: numHandleClickAgain + 1
+    }), () => {
+      console.log(`Meu outro botão ${this.colorGreen(this.state.numHandleClickAgain)}`);
+    })
   }
   
   handleClickOneMore() {
-    this.setState((estadoAnterior, _props) => ({
-      numHandleClickOneMore: estadoAnterior.numHandleClickOneMore + 1
-    }))
+    this.setState(({numHandleClickOneMore}) => ({
+      numHandleClickOneMore: numHandleClickOneMore + 1
+    }), () => {
+      console.log(`Mais um botão ${this.colorGreen(this.state.numHandleClickAgain)}`);
+    })
+  }
+
+  colorGreen(num) {
+    return num % 2 === 0 ? 'green' : 'white';
   }
 
   render() {
+    const {numHandleClick, numHandleClickAgain, numHandleClickOneMore} = this.state;
     return (
       <div>
-        <button onClick={this.handleClick}>Meu botão {this.state.numHandleClick}</button>
-        <button onClick={this.handleClickAgain}>Meu outro botão {this.state.numHandleClickAgain}</button>
-        <button onClick={this.handleClickOneMore}>Mais um botão {this.state.numHandleClickOneMore} </button>
+        <button onClick={this.handleClick} style={{backgroundColor: this.colorGreen(numHandleClick)}}>
+          Meu botão {this.state.numHandleClick}
+        </button>
+
+        <button onClick={this.handleClickAgain} style={{backgroundColor: this.colorGreen(numHandleClickAgain)}}>
+          Meu outro botão {this.state.numHandleClickAgain}
+        </button>
+
+        <button onClick={this.handleClickOneMore} style={{backgroundColor: this.colorGreen(numHandleClickOneMore)}}>
+          Mais um botão {this.state.numHandleClickOneMore} 
+        </button>
       </div>
     )
   }
