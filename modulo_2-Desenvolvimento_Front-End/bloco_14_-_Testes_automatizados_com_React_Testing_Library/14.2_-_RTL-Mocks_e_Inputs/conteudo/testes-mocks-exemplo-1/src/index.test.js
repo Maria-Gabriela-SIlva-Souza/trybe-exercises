@@ -29,11 +29,13 @@ describe('Aprendendo sobre Mocks', () => {
     expect(somaDoisNumeros).toHaveBeenCalledTimes(1); // toHaveBeenCalledTimes() ==> Mostra quantas vezes a função foi chamada
   });
 
-  // it('', () => {
+  it('Testa que retorna true quando o número é par', () => {
+    retornaNumeroAleatorio = jest.fn().mockReturnValue(2);
+    expect(divisivelPorDois()).toBe(true);
+  });
 
-  // });
-
-  // it('', () => {
-
-  // });
+  it('Testa que retorna true quando o número é ímpar', () => {
+    retornaNumeroAleatorio = jest.fn().mockReturnValue(3);
+    expect(divisivelPorDois()).toBe(false);
+  });
 })
