@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import ValidEmail from './ValidEmail';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +32,9 @@ class App extends React.Component {
 
         <input id='btn-id' type='button' value='Voltar' />
 
-        <h2 data-testid='id-email-user'>{`Valor: ${saveEmail}`}</h2>
+        {/* <h2 data-testid='id-email-user'>{`Valor: ${saveEmail}`}</h2> */}
+        {/* Exercicio de teste de um componente isolado */}
+        <ValidEmail email={ saveEmail } /> 
       </div>
     )
   }
