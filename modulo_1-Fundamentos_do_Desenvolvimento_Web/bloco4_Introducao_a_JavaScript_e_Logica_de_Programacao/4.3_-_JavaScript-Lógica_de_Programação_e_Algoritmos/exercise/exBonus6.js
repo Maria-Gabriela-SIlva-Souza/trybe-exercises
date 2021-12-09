@@ -12,4 +12,4 @@ for (let i = 2; i <= numberToCheck; i += 1) { // Começamos em 2 porque todos os
 
 if (divisors === 2) console.log(numberToCheck + ' é primo');
 // Se o número de divisores são 2; ele é primo pois só é divisível por 1 e por ele mesmo
-else console.log(numberToCheck + ' não é primo');
+else console.log(numberToCheck + ' não é primo');//
