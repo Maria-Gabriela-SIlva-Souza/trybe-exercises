@@ -1,55 +1,56 @@
-const firstLi = document.getElementById('first-li');
-const secondLi = document.getElementById('second-li');
-const thirdLi = document.getElementById('third-li');
+const firstLi = document.getElementById('firstLi');
+const secondLi = document.getElementById('secondLi');
+const thirdLi = document.getElementById('thirdLi');
 const input = document.getElementById('input');
-const myWebpage = document.getElementById('my-spotrybefy');
+const myWebpage = document.getElementById('mySpotrybefy');
 
-
-// 1. Copie esse arquivo e edite apenas ele;
-// 1.1. Antes de começar os exercícios, use o LiveServer para dar uma olhada em como está a página no navegador.
-// 1.2. Note que uma das caixas está um pouco acima das outras. Por que isso ocorre?
-
-// 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
-// 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
-function handleChangeTech(event) {
-  const techElement = document.querySelector('.tech');
-  techElement.classList.remove('tech');
+/*1. Crie uma função que adicione a classe 'tech' ao elemento selecionado;
+Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?*/
+function adicionaClasseTech (event) {
+  const classeTech = document.querySelector ('.tech');
+  classeTech.classList.remove ('tech');
   event.target.classList.add('tech');
-  input.value = '';
+  
+
 }
+firstLi.addEventListener('click', adicionaClasseTech);
+secondLi.addEventListener('click', adicionaClasseTech);
+thirdLi.addEventListener('click', adicionaClasseTech);
 
-firstLi.addEventListener('click', handleChangeTech);
-secondLi.addEventListener('click', handleChangeTech);
-thirdLi.addEventListener('click', handleChangeTech);
+/*A seção acima atribui uma função ao evento de clique nas nossas Li's. Essa função, primeiramente recebe o "event" como parâmetro, que é um objeto que contém informações sobre o evento que foi disparado no momento. Dentro dele existe a chave "target", que é uma referência ao elemento que deu início ao evento.
+Na primeira linha dentro da função, atribuimos o elemento com a classe "tech" à uma variável e na linha seguinte, removemos essa classe do elemento. E após isso, atribuimos essa classe ao "event.target", que é a propriedade que discutimos no parágrafo anterior. Por fim, limpamos nosso input, inserindo uma string vazia em seu campo de texto.
+Resumindo, tiramos a classe "tech" da Div que possuir ela, inserimos essa mesma classe na Li em que a gente clicou e aí limpamos nosso input.
+Isso funciona como se estivéssemos selecionando a Li em que queremos escrever o título da música.*/
 
-// 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
-// com a classe 'tech';
-function textInput (event) {
-  const techElement = document.querySelector('.tech');
-  techElement.innerText = event.target.value;
-}
 
-input.addEventListener('input', textInput);
+/*2. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
+com a classe 'tech';*/
 
-// 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
-// redirecione para alguma página;
-// 4.1. Que tal redirecionar para seu portifólio?
-function redirect () {
-  window.location.replace('https://blog.betrybe.com/');
-}
+input.addEventListener ('input', function(event) { //Cria evento no input, com o parametro input e uma função anônima
+  const classeTech = document.querySelector('.tech'); // declara constante que contenha classe tech
+  classeTech.innerText = event.target.value; //no elemento da classe tech, atribui no evento próprio o valor inserido na mesma
+});
 
-myWebpage.addEventListener('dblclick', redirect)
+/*3. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
+redirecione para alguma página;
+1. Que tal redirecionar para seu portifólio?*/
+myWebpage.addEventListener ('dblclick', function () {
+  window.location.replace('https://blog.betrybe.com/'); // a ação disparada é pegar a URL atual com window.location e substituir por outro link usando .replace('https://blog.betrybe.com/') .
+});
 
-// 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
-// a cor do mesmo;
-function changeColor (event) {
-  event.target.style.color = 'green';
-}
+/*4. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
+a cor do mesmo;*/
+myWebpage.addEventListener ('mouseover', function(){
+  myWebpage.style.color = 'orange';
+});
 
-myWebpage.addEventListener('mouseover', changeColor)
+myWebpage.addEventListener('mouseout', function(event) {
+  event.target.style.color = 'unset';
+}); //adiciona o valor "unset" para a cor da fonte. Isso significa que esse estilo irá "resetar" a cor do elemento quando o mouse sair dele.
 
-// Segue abaixo um exemplo do uso de event.target:
 
+
+/*Segue abaixo um exemplo do uso de event.target:*/
 
 function resetText(event) {
   // O Event é passado como um parâmetro para a função.

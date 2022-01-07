@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="p">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="p">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+      /*Agora você! Faça o seguinte:
+    1. Recupere o elemento que contém o título da página e faça algo com ele, como alterá-lo para o nome do seu filme favorito.
+    2. Agora recupere o segundo parágrafo e use sua criatividade para alterá-lo.
+    3. Por fim, recupere o subtítulo e altere-o também.*/
+
+    document.getElementById("page-title").innerText = 'Harry Potter';
+
+    document.getElementById('second-paragraph').innerText = 'Melhor filme de todos';
+
+    document.getElementById('subtitle').innerText = 'Maria Gabriela';
+
+
+    /*
+    1. Adicione uma classe igual para os dois parágrafos.
+    2. Recupere os seus parágrafos via código JavaScript , usando a função getElementsByClassName ;
+    3. Altere algum estilo do primeiro deles.
+    4.Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName .*/
+
+    document.getElementsByClassName('p')[0].style.backgroundColor = 'blue';
+
+    document.getElementsByTagName('h4')[0].style.color = 'yellow';
+
+    /*substitua todas as funções que você usou no exercício anterior por querySelector e/ou querySelectorAll .*/
+
+    document.querySelector("page-title").innerText = 'Harry Potter';
+
+    document.querySelector('second-paragraph').innerText = 'Melhor filme de todos';
+
+    document.querySelector('subtitle').innerText = 'Maria Gabriela';
+
+    document.querySelectorAll('p')[0].style.backgroundColor = 'blue';
+
+    document.querySelectorAll('h4')[0].style.color = 'yellow';
+
+    </script>
+  </body>
+</html>
