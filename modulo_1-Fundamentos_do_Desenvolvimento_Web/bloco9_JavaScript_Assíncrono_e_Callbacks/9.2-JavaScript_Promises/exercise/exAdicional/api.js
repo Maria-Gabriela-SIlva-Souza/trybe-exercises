@@ -16,6 +16,3 @@ const dataCripto = (data) => {
     criptomoedas.appendChild(li);
   })
 }
-
-
-window.onload = () => fetchCriptoMoeda();
