@@ -16,16 +16,3 @@ const dataCripto = (data) => {
     criptomoedas.appendChild(li);
   })
 }
-
-
-window.onload = () => fetchCriptoMoeda();
-
-const renderWithRedux = (
-  component,
-  { initialState, store = createStore(reducer, initialState) } = {}
-) => {
-  return {
-    ...render(<Provider store={store}>{component}</Provider>),
-    store,
-  }
-}
