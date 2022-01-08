@@ -1,7 +1,7 @@
 import React from 'react';
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
     this.handleClick = this.handleClick.bind(this)
     this.state = {
@@ -16,8 +16,10 @@ class App extends React.Component {
   }
 
   render() {
+    const { numeroDeCliques } = this.state;
+
     return (
-      <button onClick={this.handleClick} >Meu botão {this.state.numeroDeCliques}</button>
+      <button onClick={this.handleClick} >Meu botão {numeroDeCliques}</button>
     )
   }
 }
