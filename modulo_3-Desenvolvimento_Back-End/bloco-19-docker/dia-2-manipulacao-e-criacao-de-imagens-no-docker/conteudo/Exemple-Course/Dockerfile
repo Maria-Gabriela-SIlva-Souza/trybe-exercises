@@ -8,6 +8,7 @@ COPY ./index.html /usr/share/nginx/html
 EXPOSE 3000
 
 # 4 - O ENV faz com que possamos setar variáveis de ambientes que podem ser usadas depois dentro dos containers, parecidas com as consts
+# Esse env foi feito só para fins didáticos
 ENV API_URL=http://localhost:8000/api/
 
 # 5 - Definindo pasta de trabalho da imagem, onde será direcionada ao acessar o container, facilitadora do comando RUN
