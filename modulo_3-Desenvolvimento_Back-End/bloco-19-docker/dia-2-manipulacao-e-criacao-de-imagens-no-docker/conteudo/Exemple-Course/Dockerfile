@@ -22,3 +22,5 @@ RUN ls
 ENTRYPOINT [ "/usr/sbin/nginx" ] 
 # Configurar parâmetros que vão ser enviados para o executável
 CMD [ "-g", "daemon off;" ]
+
+# No temrinal executar o comando //docker build .// para buildar o dockerfile desse diretório
