@@ -1,0 +1,12 @@
+FROM nginx
+# O /usr/share/nginx/html vem da documentação do nginx
+COPY ./index.html /usr/share/nginx/html
+EXPOSE 3000
+# O ENV faz com que possamos setar variáveis de ambientes que podem ser usadas depois dentro dos containers, parecidas com as consts
+ENV API_URL=http://localhost:8000/api/
+# Definindo pasta de trabalho da imagem, onde será direcionada ao acessar o container, facilitadora do comando RUN
+WORKDIR /usr/share/nginx/html
+RUN ls
+# O que será executado quando subirmos o container
+ENTRYPOINT [ "/usr/sbin/nginx" ]
+CMD [ "-g", "deamon off" ]
