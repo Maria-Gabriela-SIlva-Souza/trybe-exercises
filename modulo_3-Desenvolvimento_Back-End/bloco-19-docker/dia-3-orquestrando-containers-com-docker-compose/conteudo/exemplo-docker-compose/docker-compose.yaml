@@ -1,2 +1,23 @@
 # 1 - Escolher a versão do compose que devemos usar
 version: '3'
+# 2 - Definir quais serviços (imagens ou Dockerfiles) serão utilizados
+services:
+# database
+  db:
+    # imagem utilizada
+    image: mysql:5.7
+    # mapear a pasta com os dados mysql para um volume em nossa máquina
+    volumes:
+      # dentro desse volume colocarei as informações da pasta em referência
+      - db_data:/var/lib/mysql
+    # caso dê um erro ou acabe sua execução ele volte a funcionar automaticamente
+    restart: aways
+    # definição das variáveis de ambiente com as informações de login e senha do banco de dados
+    environment:
+      # Essa lista são parâmetros que o próprio mysql nos pede para preencher
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
