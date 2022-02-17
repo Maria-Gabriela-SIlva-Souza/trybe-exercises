@@ -20,3 +20,7 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - db-data:/var/lib/mysql
+volumes:
+  db-data:
