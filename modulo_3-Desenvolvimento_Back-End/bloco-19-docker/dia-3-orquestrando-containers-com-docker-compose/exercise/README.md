@@ -60,6 +60,8 @@ Vamos aprimorar nossos conhecimentos sobre images e volumes , para isso:
     10. Obtenha o IMAGE ID do servidor;
     11. Depois de obter o IMAGE ID , exclua a imagem.
 
+    docker rmi -f a8ea074f4566
+
 ####################################################################################################################
 ####################################################################################################################
 
