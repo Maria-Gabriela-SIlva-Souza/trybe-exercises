@@ -11,7 +11,7 @@ services:
       # dentro desse volume colocarei as informações da pasta em referência
       - db_data:/var/lib/mysql
     # caso dê um erro ou acabe sua execução ele volte a funcionar automaticamente
-    restart: aways
+    restart: always
     # definição das variáveis de ambiente com as informações de login e senha do banco de dados
     environment:
       # Essa lista são parâmetros que o próprio mysql nos pede para preencher
@@ -30,7 +30,7 @@ services:
     ports:
       - "8000:80"
     # caso dê um erro ou acabe sua execução ele volte a funcionar automaticamente
-    restart: aways
+    restart: always
     # definição das variáveis de ambiente com as informações de login e senha do banco de dados
     environment:
       # o nome do service anterior + porta padrão do mysql
