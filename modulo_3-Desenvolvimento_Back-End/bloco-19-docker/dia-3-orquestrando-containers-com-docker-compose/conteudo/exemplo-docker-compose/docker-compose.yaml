@@ -40,6 +40,6 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
     # criação do volume
     volumes:
-      -db_data:
+      db_data:
 
-# para colocar esse serviço no ar digitar no terminal docker compose up
+# para colocar esse serviço no ar digitar no terminal docker-compose up
