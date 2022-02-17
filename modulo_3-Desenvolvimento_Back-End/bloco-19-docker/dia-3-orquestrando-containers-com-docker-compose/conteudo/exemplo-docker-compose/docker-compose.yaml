@@ -25,7 +25,7 @@ services:
     depends_on:
       - db
     # imagem utilizada
-    image: wordpress:latest
+    image: wordpress
     # realização do bind de portas, como db e wordpress tem uma comunicação e dependência, o bind é feito somente em wordpress, que é onde acessamos
     ports:
       - "8000:80"
@@ -39,7 +39,7 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
     # criação do volume
-    volumes:
-      db_data:
+volumes:
+  db_data:
 
 # para colocar esse serviço no ar digitar no terminal docker-compose up
