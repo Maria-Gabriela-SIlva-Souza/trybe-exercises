@@ -11,6 +11,10 @@ Vamos aprimorar nossos conhecimentos sobre images e volumes , para isso:
 
     4. Acesse o arquivo missao_trybe.html e acrescente a tag <p> com o seguinte texto "Nosso negócio é GENTE! #VQV";
     5. Obtenha o id do container httpd:2.4 ;
+
+    1132ebb0bfa6
+
+    
     6. Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host ;
     7. Agora pare o container httpd:2.4 ;
     8. Exclua o seu container;
