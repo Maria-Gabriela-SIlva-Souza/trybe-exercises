@@ -33,11 +33,15 @@ Vamos aprimorar nossos conhecimentos sobre images e volumes , para isso:
         ],
 
     7. Agora pare o container httpd:2.4 ;
+
+    docker container stop 1132ebb0bfa6
+    
     8. Exclua o seu container;
     9. Verifique se a pasta onde você salvo o arquivo html permanece no mesmo lugar;
     10. Obtenha o IMAGE ID do servidor;
     11. Depois de obter o IMAGE ID , exclua a imagem.
 
+--------------------------------------------------------------------------------------------------------------------
 Exercício 2 :
     1. Crie o arquivo Compose para subir um ghost blog , essa plataforma é similar com o Wordpress e é utilizada para criar sites de conteúdo. Você pode ler no site oficial como criar conteúdos nele e utilizá-lo. Para esse exercício, utilizaremos apenas sua página de exemplo:
     2. Utilize a versão "3" no arquivo;
