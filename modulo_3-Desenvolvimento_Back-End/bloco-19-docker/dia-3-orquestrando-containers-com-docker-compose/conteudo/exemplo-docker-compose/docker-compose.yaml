@@ -21,3 +21,24 @@ services:
       MYSQL_PASSWORD: wordpress
 
   wordpress:
+    # Antes do service wordpress ser criado, ele tem uma dependência do banco de dados (db), pois precisa da criação desse banco de dados
+    depends_on:
+      - db
+    # imagem utilizada
+    image: wordpress:latest
+    # realização do bind de portas, como db e wordpress tem uma comunicação e dependência, o bind é feito somente em wordpress, que é onde acessamos
+    ports:
+      - "8000:80"
+    # caso dê um erro ou acabe sua execução ele volte a funcionar automaticamente
+    restart: aways
+    # definição das variáveis de ambiente com as informações de login e senha do banco de dados
+    environment:
+      # o nome do service anterior + porta padrão do mysql
+      WORDPRESS_DB_HOST: db:3306
+      # Senha e user em referência ao db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    # criação do volume
+    volumes:
+      -db_data:
+
