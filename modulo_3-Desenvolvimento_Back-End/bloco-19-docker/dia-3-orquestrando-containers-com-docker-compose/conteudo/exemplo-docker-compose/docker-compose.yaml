@@ -42,3 +42,4 @@ services:
     volumes:
       -db_data:
 
+# para colocar esse serviço no ar digitar no terminal docker compose up
