@@ -5,17 +5,33 @@ Vamos aprimorar nossos conhecimentos sobre images e volumes , para isso:
         2. 1.2. Tag <H1> com o seguinte texto "Missão da Trybe"; 
         3. 1.3. Tag <p> com o seguinte texto "Gerar oportunidade para pessoas";
     2. Crie um container para manter um servidor httpd:2.4 Apache e vincule sua porta interna com a porta 4545 da sua máquina local.
+
     3. Após criar o container acesse a página HTML que está rodando no servidor em seu browser.
     
     docker run -d --name missao-trybe -p 4545:80 -v ~/trybe/trybe-exercises/modulo_3-Desenvolvimento_Back-End/bloco-19-docker/dia-3-orquestrando-containers-com-docker-compose/exercise:/usr/local/apache2/htdocs httpd:2.4
 
     4. Acesse o arquivo missao_trybe.html e acrescente a tag <p> com o seguinte texto "Nosso negócio é GENTE! #VQV";
+    
     5. Obtenha o id do container httpd:2.4 ;
 
+    docker container ls
     1132ebb0bfa6
 
-    
+
     6. Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host ;
+
+    docker inspect 1132ebb0bfa6
+      "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/maria/trybe/trybe-exercises/modulo_3-Desenvolvimento_Back-End/bloco-19-docker/dia-3-orquestrando-containers-com-docker-compose/exercise",
+                "Destination": "/usr/local/apache2/htdocs",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+
     7. Agora pare o container httpd:2.4 ;
     8. Exclua o seu container;
     9. Verifique se a pasta onde você salvo o arquivo html permanece no mesmo lugar;
