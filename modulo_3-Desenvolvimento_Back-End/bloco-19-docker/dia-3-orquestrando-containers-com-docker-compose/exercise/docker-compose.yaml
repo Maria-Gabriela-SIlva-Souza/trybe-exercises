@@ -22,5 +22,9 @@ services:
       MYSQL_ROOT_PASSWORD: example
     volumes:
       - db-data:/var/lib/mysql
+      
 volumes:
   db-data:
+
+networks:
+  my-network:
