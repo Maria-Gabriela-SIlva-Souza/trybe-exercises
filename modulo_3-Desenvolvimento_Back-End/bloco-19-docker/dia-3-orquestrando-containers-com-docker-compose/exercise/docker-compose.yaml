@@ -11,6 +11,8 @@ services:
         database__connection__user=root
         database__connection__password=example
         database__connection__database=ghost
+    depends_on:
+      - db
 
 
 
