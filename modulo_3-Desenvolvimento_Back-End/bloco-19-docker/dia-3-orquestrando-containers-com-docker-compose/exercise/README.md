@@ -35,8 +35,11 @@ Vamos aprimorar nossos conhecimentos sobre images e volumes , para isso:
     7. Agora pare o container httpd:2.4 ;
 
     docker container stop 1132ebb0bfa6
-    
+
     8. Exclua o seu container;
+
+    docker container rm 1132ebb0bfa6
+
     9. Verifique se a pasta onde você salvo o arquivo html permanece no mesmo lugar;
     10. Obtenha o IMAGE ID do servidor;
     11. Depois de obter o IMAGE ID , exclua a imagem.
