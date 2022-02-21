@@ -1,0 +1,51 @@
+EXERCICIO REALIZADO NO Workbench
+
+Exercício 1 : Descubra como fazer uma pesquisa em qualquer tabela sem usar uma linha de código. 
+
+Resposta: Clicar com botão direito na tabela e clicar em "select rows".
+
+
+
+
+Exercício 2 : Descubra como é possível criar uma tabela sem usar código SQL.
+
+Resposta: Define um schema default, e após isso clicar em create table usando o botão direito.
+
+
+
+
+Exercício 3 : Feito isso, crie a seguinte tabela com as seguintes restrições: 
+Nome da tabela: Filme
+Colunas:
+FilmeId - primary key, tipo int, incrementa por 1 cada vez que um valor é inserido automaticamente;
+Descricao - não permite nulos, tipo texto (varchar(100));
+AnoLancamento - não permite nulos, tipo int;
+Nota - permite nulos, tipo int;
+
+Resposta: O GUI do Mysql Workbench é bem intuitivo e conseguimos realizar isso.
+
+
+
+
+Exercício 4 : Analise a tabela city do schema sakila e encontre a tabela à qual a coluna country_id faz referência. 
+
+Resposta: Ela faz referência à tabela country.
+
+
+
+
+
+Exercício 5 : Após resolver o exercício anterior, responda: qual tipo de relacionamento a tabela city faz com a tabela country ? 
+
+Resposta: N:1
+
+
+
+
+
+Exercício 6 : Qual tipo de relacionamento a tabela country faz com a tabela city ? 
+
+Resposta: 1:N
+
+
+
