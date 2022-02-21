@@ -1,0 +1,45 @@
+# 1 - Escolher a versão do compose que devemos usar
+version: '3'
+# 2 - Definir quais serviços (imagens ou Dockerfiles) serão utilizados
+services:
+# database
+  db:
+    # imagem utilizada
+    image: mysql:5.7
+    # mapear a pasta com os dados mysql para um volume em nossa máquina
+    volumes:
+      # dentro desse volume colocarei as informações da pasta em referência
+      - db_data:/var/lib/mysql
+    # caso dê um erro ou acabe sua execução ele volte a funcionar automaticamente
+    restart: always
+    # definição das variáveis de ambiente com as informações de login e senha do banco de dados
+    environment:
+      # Essa lista são parâmetros que o próprio mysql nos pede para preencher
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    # Antes do service wordpress ser criado, ele tem uma dependência do banco de dados (db), pois precisa da criação desse banco de dados
+    depends_on:
+      - db
+    # imagem utilizada
+    image: wordpress
+    # realização do bind de portas, como db e wordpress tem uma comunicação e dependência, o bind é feito somente em wordpress, que é onde acessamos
+    ports:
+      - "8000:80"
+    # caso dê um erro ou acabe sua execução ele volte a funcionar automaticamente
+    restart: always
+    # definição das variáveis de ambiente com as informações de login e senha do banco de dados
+    environment:
+      # o nome do service anterior + porta padrão do mysql
+      WORDPRESS_DB_HOST: db:3306
+      # Senha e user em referência ao db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    # criação do volume
+volumes:
+  db_data:
+
+# para colocar esse serviço no ar digitar no terminal docker-compose up
