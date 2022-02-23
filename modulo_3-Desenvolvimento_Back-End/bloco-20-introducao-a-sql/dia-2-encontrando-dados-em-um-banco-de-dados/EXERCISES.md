@@ -113,7 +113,9 @@ INSERT INTO Scientists(SSN,Name)
     14. Escreva uma query para exibir todas as informações dos cinco projetos com a menor quantidade de horas.
     	SELECT * FROM Scientists.Projects ORDER BY Hours LIMIT 5;
     	
-
+    15. Escreva uma query que exiba a string "Existem Number cientistas na tabela Scientists.", em que Number se refira a quantidade de cientistas.
+		USE Scientists;
+		SELECT CONCAT('Existem', ' ', COUNT(Name), ' ', 'cientistas na tabela Scientists.') as resultado FROM Scientists;
     	
 
 	
