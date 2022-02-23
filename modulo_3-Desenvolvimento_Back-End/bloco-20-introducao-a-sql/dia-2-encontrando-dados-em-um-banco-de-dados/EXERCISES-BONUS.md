@@ -50,7 +50,7 @@ INSERT INTO Provides(Piece, Provider, Price)
     	SELECT * FROM Provides ORDER BY Price DESC LIMIT 5;
     
     3. Escreva uma query para exibir o nome das empresas e preço das peças com os quatro maiores preços, começando a lista a partir do 3º item.
-    
+    	SELECT Provider, Price FROM Provides ORDER BY Price DESC LIMIT 4 OFFSET 3;
     
     4. Escreva uma query para exibir todas as informações das peças que são providas pela empresa HAL . Ordene o resultado pelos preços das peças de forma decrescente.
     
