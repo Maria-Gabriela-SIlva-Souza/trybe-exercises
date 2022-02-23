@@ -104,6 +104,9 @@ INSERT INTO Scientists(SSN,Name)
     11. Escreva uma query para exibir o código de todos os projetos da tabela AssignedTo sem que haja repetições.
     	SELECT DISTINCT Project FROM Scientists.AssignedTo;
     	
+    12. Escreva uma query para exibir o nome do projeto com maior quantidade de horas.
+    	SELECT Name FROM Scientists.Projects ORDER BY Hours DESC LIMIT 1;
+    	
 
 	
 
