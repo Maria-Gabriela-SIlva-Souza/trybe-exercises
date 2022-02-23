@@ -76,6 +76,10 @@ INSERT INTO Scientists(SSN,Name)
    	2. Escreva uma query para exibir três números em três colunas.
 		SELECT 1, 2, 3;
 	
+    3. Escreva uma query para exibir a soma dos números 10 e 15.
+    	SELECT 10 + 15;
+    	
+
 
 	
 
