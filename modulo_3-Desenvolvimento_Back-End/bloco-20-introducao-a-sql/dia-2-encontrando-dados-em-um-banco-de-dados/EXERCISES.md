@@ -92,6 +92,9 @@ INSERT INTO Scientists(SSN,Name)
     7. Escreva uma query para exibir o nome dos cientistas em ordem alfabética.
     	SELECT * FROM Scientists.Scientists ORDER BY Name;
 
+    8. Escreva uma query para exibir o nome dos Projetos em ordem alfabética descendente.
+    	SELECT * FROM Scientists.Projects ORDER BY Name DESC;
+
 
 	
 
