@@ -82,6 +82,9 @@ INSERT INTO Scientists(SSN,Name)
     4. Escreva uma query para exibir o resultado de uma expressão aritmética qualquer.
     	SELECT 13 * 10;
     	
+    5. Escreva uma query para exibir todas as informações de todos os cientistas.
+    	SELECT * FROM Scientists.Scientists;
+    	
 
 
 	
