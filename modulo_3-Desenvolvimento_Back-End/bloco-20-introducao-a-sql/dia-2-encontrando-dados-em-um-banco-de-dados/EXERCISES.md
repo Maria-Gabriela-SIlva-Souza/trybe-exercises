@@ -89,6 +89,9 @@ INSERT INTO Scientists(SSN,Name)
     	SELECT Name AS 'Nome do Projeto', Hours AS 'Tempo de Trabalho' FROM Scientists.Projects;
    
 
+    7. Escreva uma query para exibir o nome dos cientistas em ordem alfabética.
+    	SELECT * FROM Scientists.Scientists ORDER BY Name;
+
 
 	
 
