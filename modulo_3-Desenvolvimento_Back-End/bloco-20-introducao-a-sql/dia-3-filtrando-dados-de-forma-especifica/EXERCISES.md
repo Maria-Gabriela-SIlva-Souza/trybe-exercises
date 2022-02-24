@@ -73,7 +73,8 @@ INSERT INTO Vendas(fornecimento, quantity, order_date)
     	SELECT * FROM Fornecimentos WHERE peca = 2 ORDER BY Fornecedor;
     
     3. Escreva uma query para exibir as peças, preço e fornecedor de todos os fornecimentos em que o código do fornecedor tenha a letra N .
-
+		USE PecasFornecedores;
+        SELECT peca, preco, fornecedor FROM Fornecimentos WHERE Fornecedor LIKE '%N%';
 
     
     4. Escreva uma query para exibir todas as informações dos fornecedores que são empresas limitadas (LTDA). Ordene os resultados em ordem alfabética decrescente.
