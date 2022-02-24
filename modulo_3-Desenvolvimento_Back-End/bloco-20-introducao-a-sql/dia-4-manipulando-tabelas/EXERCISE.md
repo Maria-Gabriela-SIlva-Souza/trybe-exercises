@@ -46,17 +46,42 @@ INSERT INTO BoxOffice(movie_id, rating, domestic_sales, international_sales)
 		Os Incríveis, de Brad Bird, lançado em 2004, com 116 minutos de duração.
 		WALL-E, de Pete Docter, lançada em 2008, com 104 minutos de duração.
 				
-			RESPOSTA :	USE Pixar;
+		RESPOSTA :	USE Pixar;
 
-						SELECT * FROM Movies;
+					SELECT * FROM Movies;
 
-						INSERT INTO Movies (title, director, `year`, length_minutes)
-						VALUES 
-						('Monstros SA', 'Pete Docter', 2001, 92),
-						('Procurando Nemo', 'John Lasseter', 2003, 107),
-						('Os Incríveis', 'Brad Bird', 2004, 116),
-						('WALL-E', 'Pete Docter', 2008, 104);
+					INSERT INTO Movies (title, director, `year`, length_minutes)
+					VALUES 
+					('Monstros SA', 'Pete Docter', 2001, 92),
+					('Procurando Nemo', 'John Lasseter', 2003, 107),
+					('Os Incríveis', 'Brad Bird', 2004, 116),
+					('WALL-E', 'Pete Docter', 2008, 104);
 			
 			
 			
-
+2 - Procurando Nemo foi aclamado pela crítica! Foi classificado em 6.8, fez 450 milhões no mercado interno e 370 milhões no mercado internacional. Adicione as informações à tabela BoxOffice .
+		RESPOSTA :	INSERT INTO BoxOffice (movie_id, rating, domestic_sales, international_sales)
+					VALUES (9, '6.8', 450000000, 370000000);
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
