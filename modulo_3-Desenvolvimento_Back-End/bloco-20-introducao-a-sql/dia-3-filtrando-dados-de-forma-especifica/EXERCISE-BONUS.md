@@ -100,5 +100,6 @@ INSERT INTO Scientists(SSN, Name)
 		SELECT Name, Code FROM Projects WHERE NOT Name LIKE 'A%';
     
     8. Escreva uma query para exibir o nome de todos os projetos cujo código contenha a letra H .
-    
+    	USE Scientists;
+		SELECT Code FROM Projects WHERE Name LIKE '%H%';
     
