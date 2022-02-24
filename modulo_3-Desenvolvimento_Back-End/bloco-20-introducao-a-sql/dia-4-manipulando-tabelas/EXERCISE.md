@@ -112,3 +112,14 @@ INSERT INTO BoxOffice(movie_id, rating, domestic_sales, international_sales)
 
 					DELETE FROM Movies
 					WHERE director = 'Andrew Staton';
+
+
+
+8 - Altere a classificação da tabela BoxOffice para 9.0 de todos os filmes que lucraram mais de 400 milhões no mercado interno.
+		RESPOSTA :	UPDATE BoxOffice
+					SET rating = '9.0'
+					WHERE domestic_sales > 400000000;
+
+
+
+
