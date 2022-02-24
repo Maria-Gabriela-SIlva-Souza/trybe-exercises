@@ -96,7 +96,8 @@ INSERT INTO Scientists(SSN, Name)
 		SELECT * FROM Projects WHERE Hours BETWEEN 250 AND 800;
     
     7. Escreva uma query para exibir o nome e o código de todos os projetos cujo nome NÃO inicie com a letra A .
-    
+    	USE Scientists;
+		SELECT Name, Code FROM Projects WHERE NOT Name LIKE 'A%';
     
     8. Escreva uma query para exibir o nome de todos os projetos cujo código contenha a letra H .
     
