@@ -80,7 +80,8 @@ INSERT INTO Scientists(SSN, Name)
 		SELECT * FROM Projects WHERE Code LIKE '%A%' ORDER BY Name;
     
     3. Escreva uma query para exibir o código e nome de todos os projetos que possuam em seu código o número 3 . Ordene o resultado em ordem alfabética.
-    
+    	USE Scientists;
+		SELECT Code, Name FROM Projects WHERE Code LIKE '%3%' ORDER BY Name;
     
     4. Escreva uma query para exibir todos os cientistas (valores numéricos) cujos projetos sejam AeH3 , Ast3 ou Che1 .
     
