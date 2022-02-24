@@ -65,7 +65,12 @@ INSERT INTO BoxOffice(movie_id, rating, domestic_sales, international_sales)
 					
 					
 					
-					
+3 - O diretor do filme "Procurando Nemo" está incorreto, na verdade ele foi dirigido por Andrew Staton. Corrija esse dado utilizando o UPDATE .
+		RESPOSTA :	SET SQL_SAFE_UPDATES = 0;
+
+					UPDATE Movies
+					SET director = 'Andrew Staton'
+					WHERE director = 'John Lasseter';						
 					
 					
 					
