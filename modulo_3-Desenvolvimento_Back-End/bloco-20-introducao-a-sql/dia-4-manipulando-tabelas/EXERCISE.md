@@ -94,11 +94,13 @@ INSERT INTO BoxOffice(movie_id, rating, domestic_sales, international_sales)
 										
 					
 					
-					
-					
-					
-					
-					
-					
-					
+6 - Exclua da tabela Movies o filme "WALL-E".
+		RESPOSTA :	DELETE FROM BoxOffice
+					WHERE movie_id = 11;
+
+					DELETE FROM Movies
+					WHERE title = 'WALL-E';
+
+
+
 					
