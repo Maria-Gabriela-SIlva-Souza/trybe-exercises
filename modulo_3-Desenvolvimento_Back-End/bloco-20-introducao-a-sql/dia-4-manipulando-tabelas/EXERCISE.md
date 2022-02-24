@@ -129,5 +129,13 @@ INSERT INTO BoxOffice(movie_id, rating, domestic_sales, international_sales)
 
 
 
+10 - Exclua da tabela Movies todos os filmes com menos de 100 minutos de duração.
+		RESPOSTA :	SELECT * FROM Movies
+					WHERE length_minutes < 100;
 
+					DELETE FROM BoxOffice
+					WHERE movie_id IN (1, 6, 7, 8);
+
+					DELETE FROM Movies
+					WHERE length_minutes < 100;
 
