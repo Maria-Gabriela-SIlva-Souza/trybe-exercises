@@ -114,10 +114,11 @@
 		FROM hr.employees;
 	
 -------------------------------------------------------------------------------------------------------------------	
-17: Escreva uma query que exiba o sobrenome e a data de contratação de todos os funcionário contratados em julho de 1987.
+17: Escreva uma query que exiba o sobrenome e a data de contratação de todos os funcionário contratados em julho de 1987.1
 
-
-	
+		SELECT LAST_NAME, HIRE_DATE FROM hr.employees
+		WHERE HIRE_DATE LIKE '1987-07%';
+			
 -------------------------------------------------------------------------------------------------------------------	
 18: Escreva uma query que exiba as seguintes informações de cada funcionário: nome , sobrenome , tempo que trabalha na empresa (em dias) .
 
