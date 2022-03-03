@@ -24,7 +24,12 @@
 -------------------------------------------------------------------------------------------------------------------
 5. Escreva uma query que exiba quatro informações: o maior salário, o menor salário, a soma de todos os salários e a média dos salários. Todos os valores devem ser formatados para ter apenas duas casas decimais.
 
-
+		SELECT 
+		MAX(SALARY) AS 'Maior Salário', 
+		MIN(SALARY) AS 'Menor Salário', 
+		SUM(SALARY) AS 'Soma de todos os Salários', 
+		ROUND(AVG(SALARY), 2) AS 'Média dos Salários'
+		FROM hr.employees;
 	
 -------------------------------------------------------------------------------------------------------------------	
 6. Escreva uma query que exiba a quantidade de pessoas que trabalham como pessoas programadoras ( IT_PROG ).
