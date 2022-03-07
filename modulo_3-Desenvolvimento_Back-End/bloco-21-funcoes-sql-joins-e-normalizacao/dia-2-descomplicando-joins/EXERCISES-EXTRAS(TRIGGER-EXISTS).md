@@ -80,7 +80,14 @@ Exercício 3: Crie um Trigger na tabela movies que, ao ter algum de seus registr
 
 Exercício 4: Utilizando o EXISTS , selecione o nome e localização dos cinemas que possuem filmes em cartaz.
 
-
+		USE Pixar;
+		SELECT t.`name`, t.location
+		FROM Theater AS t
+		WHERE EXISTS(SELECT * FROM Movies
+				WHERE Movies.theater_id = t.id);
+        
+        
+        
 
 Exercício 5: Utilizando o EXISTS , selecione o nome e localização dos cinemas que não possuem filmes em cartaz.
 
