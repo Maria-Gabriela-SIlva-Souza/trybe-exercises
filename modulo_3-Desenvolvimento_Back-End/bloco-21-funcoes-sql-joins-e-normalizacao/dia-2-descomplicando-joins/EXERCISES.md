@@ -86,7 +86,12 @@ Exercício 2: Utilizando o INNER JOIN , faça uma busca que retorne o número de
 
 Exercício 3: Utilizando o INNER JOIN , faça uma busca que retorne os filmes e sua avaliação ( rating ) em ordem decrescente.
 
-
+		USE Pixar;
+		SELECT M.title, B.rating
+		FROM Movies AS M
+		INNER JOIN BoxOffice AS B
+		ON M.id = B.movie_id
+		ORDER BY rating DESC;
 
 
 Exercício 4: Utilizando o LEFT JOIN , faça uma busca que retorne todos os dados dos cinemas, mesmo os que não possuem filmes em cartaz e, adicionalmente, os dados dos filmes que estão em cartaz nestes cinemas. Retorne os nomes dos cinemas em ordem alfabética.
