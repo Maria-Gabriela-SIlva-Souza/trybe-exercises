@@ -106,8 +106,21 @@ Exercício 4: Utilizando o LEFT JOIN , faça uma busca que retorne todos os dado
 
 Exercício 5: Utilizando o RIGHT JOIN , faça uma busca que retorne todos os dados dos filmes, mesmo os que não estão em cartaz e, adicionalmente, os dados dos cinemas que possuem estes filmes em cartaz. Retorne os nomes dos cinemas em ordem alfabética.
 
+		USE Pixar;
+		SELECT M.*, T.*
+		FROM Theater T
+		RIGHT JOIN Movies M
+		ON T.id = M.theater_id
+		ORDER BY T.`name`;
 
 
+Exercício 6: Utilizando o INNER JOIN , selecione todas as informações dos filmes com avaliação maior que 8.
+
+		USE Pixar;
+		SELECT M.*, B.rating FROM Movies M
+		INNER JOIN BoxOffice B
+		ON B.movie_id = M.id
+		WHERE B.rating > 8 AND M.theater_id IS NOT NULL;
 
 
 
