@@ -76,7 +76,12 @@ Exercício 1: Utilizando o INNER JOIN , encontre as vendas nacionais ( domestic_
 
 Exercício 2: Utilizando o INNER JOIN , faça uma busca que retorne o número de vendas para cada filme que possui um número maior de vendas internacionais ( international_sales ) do que vendas nacionais ( domestic_sales ).
 
-
+		USE Pixar;
+		SELECT M.title, (B.domestic_sales + B.international_sales) AS "Vendas"
+		FROM Movies AS M
+		INNER JOIN BoxOffice AS B
+		ON M.id = B.movie_id
+		WHERE international_sales > domestic_sales;
 
 
 Exercício 3: Utilizando o INNER JOIN , faça uma busca que retorne os filmes e sua avaliação ( rating ) em ordem decrescente.
