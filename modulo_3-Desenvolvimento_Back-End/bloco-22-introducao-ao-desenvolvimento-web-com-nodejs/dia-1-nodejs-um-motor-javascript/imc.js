@@ -1,4 +1,4 @@
-// Exercício 1
+// Exercício 1 a 5
 
 const readline = require('readline-sync');
 
@@ -22,5 +22,3 @@ const imc = () => {
 }
 
 imc();
-
-module.exports = imc;
