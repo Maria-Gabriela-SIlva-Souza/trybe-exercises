@@ -1,3 +1,5 @@
+// Exercicio 6
+
 const readline = require('readline-sync');
 
 const velocidadeMedia = () => {
