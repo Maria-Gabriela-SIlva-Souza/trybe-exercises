@@ -4,7 +4,8 @@
   "description": "Realizando exercicios de desenvolvimento iniciais de scripts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "imc": "node imc.js"
   },
   "author": "Maria Gabriela",
   "license": "ISC"
