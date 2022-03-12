@@ -6,7 +6,8 @@ const scripts = [
   { name: 'Calcular IMC', script: './imc.js' },
   { name: 'Calcular velocidade média', script: './velocidade.js' },
   { name: 'Jogo de adivinhação', script: './sorteio.js' },
-  { name: 'Calcular Fatorial', script: './fatorial.js' }
+  { name: 'Calcular Fatorial', script: './fatorial.js' },
+  { name: 'Sequência Ficonacci', script: './fibonacci.js' }
 ];
 
 // Iteramos sobre os scripts para criar a lista numerada
