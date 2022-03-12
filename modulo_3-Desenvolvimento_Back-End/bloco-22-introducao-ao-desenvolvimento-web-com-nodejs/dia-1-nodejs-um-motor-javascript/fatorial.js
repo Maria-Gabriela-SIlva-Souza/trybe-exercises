@@ -1,3 +1,5 @@
+// Exercicio Bônus 1
+
 const readline = require('readline-sync');
 
 const calculaFatorial = () => {
