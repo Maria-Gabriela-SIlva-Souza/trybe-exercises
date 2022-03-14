@@ -1,1 +1,0 @@
-Fazendo leitura síncrona desse arquivo
