@@ -22,7 +22,19 @@ const num1 = Math.floor(Math.random() * 100 + 1);
 const num2 = Math.floor(Math.random() * 100 + 1);
 const num3 = Math.floor(Math.random() * 100 + 1);
 
-operacaoMatematica(num1, num2, num3)
-  .then(result => console.log(`O resultado é: ${result}`))
-  .catch(err => console.log(`erro: ${err.message}`));
+// operacaoMatematica(num1, num2, num3)
+//   .then(result => console.log(`O resultado é: ${result}`))
+//   .catch(err => console.log(`erro: ${err.message}`));
 
+// Exercicio 3
+
+async function main() {
+  try {
+    const result = await operacaoMatematica(num1, num2, 'num3');
+    console.log(`O resultado é: ${result}`);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+main();
