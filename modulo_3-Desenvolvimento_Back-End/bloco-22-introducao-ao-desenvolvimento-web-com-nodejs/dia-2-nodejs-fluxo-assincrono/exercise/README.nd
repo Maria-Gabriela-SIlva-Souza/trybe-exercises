@@ -59,3 +59,11 @@ Para os exercícios abaixo, faremos uso de um módulo chamado readline , princip
   8. Salve o novo arquivo no caminho de destino.
       
 • Dica: Utilize a classe RegExp do JS para substituir todas as ocorrências da palavra com replace(new RegExp(palavra, 'g'), novaPalavra)
+
+
+       
+8. Escreva uma função que receba um número inteiro maior que 0 e retorne uma Promise.
+  1. Se o número for múltiplo de 3, resolva a Promise com o valor "Fizz".
+  2. Se o número for múltiplo de 5, resolva a Promise com o valor "Buzz".
+  3. Se o número for múltiplo de 3 e 5, resolva a Promise com o valor "FizzBuzz".
+  4. Caso contrário, rejeite a Promise com o valor do número.
