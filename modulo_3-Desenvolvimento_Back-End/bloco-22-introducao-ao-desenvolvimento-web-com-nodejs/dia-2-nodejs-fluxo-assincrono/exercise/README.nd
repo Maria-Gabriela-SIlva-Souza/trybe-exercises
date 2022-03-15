@@ -36,3 +36,12 @@
   3. Programe sua função para que ela faça a leitura de todos os arquivos criados no item anterior, armazene essa informação e escreva em um arquivo chamado fileAll.txt .
           
   • O conteúdo do arquivo fileAll.txt deverá ser Finalmente estou usando Promise.all !!! .
+
+
+Para os exercícios abaixo, faremos uso de um módulo chamado readline , principalmente de seu método readline.question() . Ele provê uma interface de leitura de dados inserida no terminal. Para mais informações, consulte a documentação .
+
+6. Crie um script que mostre na tela o conteúdo de um arquivo escolhido pela pessoa usuária:
+  1. Pergunte à pessoa usuária qual arquivo ela deseja ler.
+  2. Leia o arquivo indicado.
+  3. Caso o arquivo não exista, exiba na tela "Arquivo inexistente" e encerre a execução do script.
+  4. Caso o arquivo exista, escreva seu conteúdo na tela.
