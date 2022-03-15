@@ -60,13 +60,33 @@ const readFileSimpsons = async () => {
 
 // Exercicio 4.4
 
-const readSimpsonsWrite = async () => {
+// const readSimpsonAndWrite = async () => {
+//   const simpsonDoc = await readFileSimpsons()
+
+//   const filterSimpson = simpsonDoc
+//     .filter((simpson) => simpson.id === '1' || simpson.id === '2' || simpson.id === '3' || simpson.id === '4');
+
+//   await fs.writeFile('./simpsonFamily.json', JSON.stringify(filterSimpson))
+//   .then(() => {
+//     console.log('Arquivo salvo');
+//   })
+//   .catch(() => {
+//     console.error('err');
+//   });
+// }
+
+// readSimpsonAndWrite();
+
+
+// Exercicio 4.5
+
+const addPerson = async () => {
   const simpsonDoc = await readFileSimpsons()
 
-  const filterSimpson = simpsonDoc
-    .filter((simpson) => simpson.id === '1' || simpson.id === '2' || simpson.id === '3' || simpson.id === '4');
+  const personNelson = simpsonDoc
+    .filter(simpson => ['1', '2', '3', '4'].includes(simpson.id) || simpson.id === '5');
 
-  await fs.writeFile('./simpsonFamily.json', JSON.stringify(filterSimpson))
+  await fs.writeFile('./simpsonFamily.json', JSON.stringify(personNelson))
   .then(() => {
     console.log('Arquivo salvo');
   })
@@ -75,4 +95,4 @@ const readSimpsonsWrite = async () => {
   });
 }
 
-readSimpsonsWrite();
+addPerson();
