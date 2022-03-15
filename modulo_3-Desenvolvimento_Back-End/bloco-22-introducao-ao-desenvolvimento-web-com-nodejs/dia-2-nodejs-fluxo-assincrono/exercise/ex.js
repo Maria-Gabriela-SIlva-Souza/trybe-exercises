@@ -43,16 +43,36 @@ const readFileSimpsons = async () => {
 
 // Exercicio 4.3
 
-const readSimpsonsDeleteIds = async () => {
+// const readSimpsonsDeleteIds = async () => {
+//   const simpsonDoc = await readFileSimpsons()
+
+//   const filterSimpson = simpsonDoc.filter((simpson) => simpson.id != '6' && simpson.id != '10');
+
+//   if (!filterSimpson) {
+//     throw new Error('Requisição não encontrada');
+//   }
+
+//   return console.log(filterSimpson);
+// }
+
+// readSimpsonsDeleteIds();
+
+
+// Exercicio 4.4
+
+const readSimpsonsWrite = async () => {
   const simpsonDoc = await readFileSimpsons()
 
-  const filterSimpson = simpsonDoc.filter((simpson) => simpson.id != '6' && simpson.id != '10');
+  const filterSimpson = simpsonDoc
+    .filter((simpson) => simpson.id === '1' || simpson.id === '2' || simpson.id === '3' || simpson.id === '4');
 
-  if (!filterSimpson) {
-    throw new Error('Requisição não encontrada');
-  }
-
-  return console.log(filterSimpson);
+  await fs.writeFile('./simpsonFamily.json', JSON.stringify(filterSimpson))
+  .then(() => {
+    console.log('Arquivo salvo');
+  })
+  .catch(() => {
+    console.error('err');
+  });
 }
 
-readSimpsonsDeleteIds();
+readSimpsonsWrite();
