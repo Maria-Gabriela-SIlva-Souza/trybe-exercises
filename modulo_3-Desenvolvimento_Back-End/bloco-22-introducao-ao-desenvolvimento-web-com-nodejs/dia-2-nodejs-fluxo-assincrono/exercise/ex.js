@@ -18,18 +18,37 @@ const nomeDoArquivo = 'simpsons.json';
 
 // Exercicio 4.2
 
-const readSimpsonsId = async (idSelected) => {
+// const readSimpsonsId = async (idSelected) => {
+//   const simpsonDoc = await
+//     fs.readFile(nomeDoArquivo, 'utf8')
+//     .then((data) => JSON.parse(data))
+
+//   const chosenSimpson = simpsonDoc.find((simpson) => simpson.id === (idSelected).toString());
+
+//   if (!chosenSimpson) {
+//     throw new Error('id não encontrado');
+//   }
+
+//   return console.log(chosenSimpson);
+// }
+
+// readSimpsonsId(1);
+
+
+// Exercicio 4.3
+
+const readSimpsonsDeleteIds = async () => {
   const simpsonDoc = await
     fs.readFile(nomeDoArquivo, 'utf8')
     .then((data) => JSON.parse(data))
 
-  const chosenSimpson = simpsonDoc.find((simpson) => simpson.id === (idSelected).toString());
+  const filterSimpson = simpsonDoc.filter((simpson) => simpson.id != '6' && simpson.id != '10');
 
-  if (!chosenSimpson) {
-    throw new Error('id não encontrado');
+  if (!filterSimpson) {
+    throw new Error('Requisição não encontrada');
   }
 
   return console.log(chosenSimpson);
 }
 
-readSimpsonsId(1);
+readSimpsonsDeleteIds();
