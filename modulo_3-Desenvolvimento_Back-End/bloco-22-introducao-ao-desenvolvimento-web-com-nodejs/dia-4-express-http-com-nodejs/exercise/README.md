@@ -15,3 +15,6 @@
 
 5. Crie uma API de dados das personagens de Simpsons
   - Dados da API localizados em simpsons.json
+
+6. Crie um endpoint GET /simpsons
+  - O endpoint deve retornar um array com todos os simpsons.
