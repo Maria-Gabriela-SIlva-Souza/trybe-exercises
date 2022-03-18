@@ -1,9 +1,11 @@
 const express = require('express');
-const app = express();
 const authMiddleware = require('./authMiddleware');
+const crypto = require('crypto');
 
+const app = express();
 app.use(authMiddleware);
 const simpsonsData = require('./readAndWriteSimpsons')
+const token = require('./generateToken');
 
 // Usando async/await pois a requisição de leitura provém de uma promise
 app.get('/simpsons', async (_req, res) => {
@@ -34,6 +36,18 @@ app.post('/simpsons', async(req, res) => {
   res.status(204).end();
 
 });
+
+app.post('/signup', (req, res) => {
+  const { email, password , firstName, phone } = req.body;
+
+  if (!email || !password || !firstName || !phone ) return res.status(401).json({ message: 'missing fields' })
+
+  const token = crypto.randomBytes(8).toString('hex');
+
+  res.status(200).json({ token });
+
+});
+
 
 app.use((err, _req, res, _next) => {
   res.status(500).send(`Algo deu errado! Mensagem: ${err.message}`);
