@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+const authMiddleware = require('./authMiddleware');
 
+app.use(authMiddleware);
 const simpsonsData = require('./readAndWriteSimpsons')
 
 // Usando async/await pois a requisição de leitura provém de uma promise
