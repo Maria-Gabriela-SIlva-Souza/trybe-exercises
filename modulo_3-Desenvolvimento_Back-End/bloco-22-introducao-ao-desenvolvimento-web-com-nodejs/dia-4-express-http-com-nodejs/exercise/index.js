@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const pessoa = {id: 1, name: 'Gabriela', age: 25}
+
 const app = express();
 app.use(bodyParser.json());
 
@@ -19,6 +21,12 @@ app.post('/greetings', (req, res) => {
   if (age <= 17) res.status(401).json({ "message": "Unauthorized" }).end();
 
   res.status(200).json({ message: `Hello, ${name}`});
+});
+
+app.put('/users/:name/:age', (req, res) => {
+  const { name, age } = req.params;
+
+  res.status(200).json({ "message": `Seu nome é ${name} e você tem ${age} anos de idade`});
 });
 
 app.use((err, _req, res, _next) => {
