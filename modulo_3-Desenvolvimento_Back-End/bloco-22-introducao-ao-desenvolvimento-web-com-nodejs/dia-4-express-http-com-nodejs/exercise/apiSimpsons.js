@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const simpsonsData = require('./readSimpsons')
+const simpsonsData = require('./readAndWriteSimpsons')
 
 // Usando async/await pois a requisição de leitura provém de uma promise
 app.get('/simpsons', async (_req, res) => {
@@ -16,6 +16,21 @@ app.get('/simpsons/:id', async(req, res) => {
 
   if(!simpsonsId) { return res.status(404).json({ message: 'simpson not found' }) };
   res.status(202).json(simpsonsId);
+});
+
+app.post('/simpsons', async(req, res) => {
+  const { id, name } = req.body;
+  const simpsons = await simpsonsData.getSimpsons();
+
+  if (simpsons.map(({ id }) => id).includes(id)) {
+    return res.status(409).json({ message: 'id already exists' });
+  }
+
+  simpsons.push({ id, name });
+
+  await simpsonsData.setSimpsons(simpsons)
+  res.status(204).end();
+
 });
 
 app.use((err, _req, res, _next) => {

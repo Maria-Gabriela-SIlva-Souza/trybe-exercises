@@ -5,4 +5,8 @@ function getSimpsons () {
     .then(fileContent => JSON.parse(fileContent));
 }
 
-module.exports = { getSimpsons };
+function setSimpsons (newSimpsons) {
+  return fs.writeFile('./simpsons.json', JSON.stringify(newSimpsons));
+}
+
+module.exports = { getSimpsons, setSimpsons };
