@@ -1,8 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const pessoa = {id: 1, name: 'Gabriela', age: 25}
-
 const app = express();
 app.use(bodyParser.json());
 
