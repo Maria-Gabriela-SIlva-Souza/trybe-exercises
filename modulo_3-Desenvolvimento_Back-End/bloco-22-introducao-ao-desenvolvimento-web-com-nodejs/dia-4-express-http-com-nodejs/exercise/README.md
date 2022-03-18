@@ -12,3 +12,6 @@
 
 4. Crie uma rota PUT /users/:name/:age .
   - Sua rota deve retornar o seguinte JSON: { "message": "Seu nome é <name> e você tem <age> anos de idade" } .
+
+5. Crie uma API de dados das personagens de Simpsons
+  - Dados da API localizados em simpsons.json
