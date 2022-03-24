@@ -2,8 +2,8 @@ const mysql = require('mysql2/promise');
 
 // createPool mantém conexão com o mysql ativo para não ser necessário ativá-la a cada querie
 const connection = mysql.createPool({
-  user: 'root',
-  password: '',
+  user: 'gabriela',
+  password: 'maria5287355',
   host: 'localhost',
   database: 'model_example'
 });
