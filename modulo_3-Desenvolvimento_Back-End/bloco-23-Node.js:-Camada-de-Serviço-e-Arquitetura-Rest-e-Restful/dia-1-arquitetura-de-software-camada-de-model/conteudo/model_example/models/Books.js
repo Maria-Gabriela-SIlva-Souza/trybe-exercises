@@ -8,6 +8,9 @@ const getAll = async () => {
 
 const getByAuthorId = async (id) => {
   const [ booksById ] = await connection.execute('SELECT title FROM books WHERE author_id = ?',  [ id ]);
+
+  if (booksById.length === 0) return null;
+
   return booksById;
 }
 
