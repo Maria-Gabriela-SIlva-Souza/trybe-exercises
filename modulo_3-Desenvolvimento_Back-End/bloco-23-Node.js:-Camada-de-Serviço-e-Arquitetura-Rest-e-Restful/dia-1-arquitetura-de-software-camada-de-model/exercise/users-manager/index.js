@@ -11,5 +11,7 @@ app.use(bodyParser.json());
 // Dizemos para o express que toda requisição enviada para `POST /user` deve ser tratada pelo middleware `createUser`
 app.post('/user', middlewares.createUser);
 
+app.use(middlewares.error);
+
 // Definimos a porta
 const PORT = 3000;
