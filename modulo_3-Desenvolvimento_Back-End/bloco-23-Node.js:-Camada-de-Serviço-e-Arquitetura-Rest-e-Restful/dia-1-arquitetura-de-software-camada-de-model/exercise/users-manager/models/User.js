@@ -4,7 +4,7 @@ const connection = require('./connection');
 // Faremos a função `formatUser`
 // Note que não realizamos destructuring da senha, pois não precisaremos dela
 // Note, também, que renomeamos os campos fist_name e last_name para firstName e lastName, respectivamente
-const isValid = ({ id, first_name: firstName, last_name: lastName, email }) => {
+const formatUser = ({ id, first_name: firstName, last_name: lastName, email }) => {
   // A única coisa que precisamos fazer agora é criar um objeto com os nomes dos campos alterados
   // e sem o campo passowrd
   return {
@@ -24,6 +24,15 @@ const create = ({ firstName, lastName, email, password }) => {
     .then(([result]) => ({ id: result.insertId, firstName, lastName, email }));
 }
 
+const findAll = async () => {
+  // Mais uma vez, chamamos connection.execute para executar nossa query.
+  const [ result ] = await connection.execute('SELECT * from users_crud.users')
+
+  const formatResult = result.map(formatUser);
+
+  return formatResult;
+}
 
 
-module.exports = { isValid, create }
+
+module.exports = { findAll, create }
