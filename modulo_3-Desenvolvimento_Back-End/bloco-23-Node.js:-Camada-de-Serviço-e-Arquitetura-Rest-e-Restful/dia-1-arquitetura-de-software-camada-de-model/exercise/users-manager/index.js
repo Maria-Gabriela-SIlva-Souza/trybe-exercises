@@ -15,3 +15,5 @@ app.use(middlewares.error);
 
 // Definimos a porta
 const PORT = 3000;
+
+app.listen(PORT, () => console.log(`Exercício de fixação rodando na porta ${PORT}`));
