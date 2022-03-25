@@ -25,3 +25,13 @@ Com isso em mente, prossiga para a realização dos exercícios:
 
 3. Caso o usuário seja criado com sucesso, retorne os campos id , firstName , lastName e email em JSON, no formato abaixo, com o status 201 Created .
 
+
+##
+
+
+EXERCÍCIO 2
+
+1. Crie o endpoint GET /user
+2. O endpoint sempre deve retornar um array;
+3. Quando não houver nenhum usuário cadastrado, retorne um array vazio;
+4. Deve sempre retornar o status 200 OK .
