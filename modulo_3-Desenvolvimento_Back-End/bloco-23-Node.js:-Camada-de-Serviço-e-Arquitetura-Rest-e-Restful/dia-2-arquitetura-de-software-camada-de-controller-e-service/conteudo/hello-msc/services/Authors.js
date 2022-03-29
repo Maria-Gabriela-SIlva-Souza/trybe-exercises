@@ -1,9 +1,11 @@
-const Author = require('../models/Authors');
+const Author = require('../models/Author');
 
 const getNewAuthor = (authorData) => {
   const { id, firstName, middleName, lastName } = authorData;
 
-  const fullName = [firstName, middleName, lastName].filter((name) => name).join(' ');
+  const fullName = [firstName, middleName, lastName]
+    .filter((name) => name)
+    .join(' ');
 
   return {
     id,
@@ -20,7 +22,7 @@ const isValid = (firstName, middleName, lastName) => {
   if (middleName && typeof middleName !== 'string') return false;
 
   return true;
-}
+};
 
 const getAll = async () => {
   const authors = await Author.getAll();
@@ -31,12 +33,21 @@ const getAll = async () => {
 const findById = async (id) => {
   const author = await Author.findById(id);
 
-  if (!author) return null;
-
   return getNewAuthor(author);
 };
 
+const createAuthor = async (firstName, middleName, lastName) => {
+  const validAuthor = isValid(firstName, middleName, lastName);
+
+  if (!validAuthor) return false;
+
+  await Author.createAuthor(firstName, middleName, lastName);
+
+  return true;
+};
+
 module.exports = {
-  getAll,
-  findById,
+ getAll,
+ findById,
+  createAuthor,
 }
