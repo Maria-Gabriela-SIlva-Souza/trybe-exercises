@@ -1,7 +1,7 @@
 const connection = require('./connection');
 
 // Converte o nome dos campos de snake_case para camelCase
-const serialize = (authorData) => authorData.map((item) => getNewAuthor({
+const serialize = (authorData) => authorData.map((item) => ({
   id: item.id,
   firstName: item.first_name,
   middleName: item.middle_name,
@@ -41,6 +41,5 @@ const createAuthor = async (firstName, middleName, lastName) => {
 module.exports = {
   getAll,
   findById,
-  isValid,
   createAuthor,
 };

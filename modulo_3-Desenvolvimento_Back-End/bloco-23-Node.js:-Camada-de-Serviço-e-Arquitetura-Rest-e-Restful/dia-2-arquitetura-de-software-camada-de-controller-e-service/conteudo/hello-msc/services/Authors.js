@@ -1,4 +1,4 @@
-const Author = require('../models/Authors');
+const Author = require('../models/Author');
 
 const getNewAuthor = (authorData) => {
   const { id, firstName, middleName, lastName } = authorData;
@@ -41,7 +41,7 @@ const createAuthor = async (firstName, middleName, lastName) => {
 
   if (!validAuthor) return false;
 
-const [author] = await Author.createAuthor(firstName, middleName, lastName)
+const author = await Author.createAuthor(firstName, middleName, lastName)
 
 authorId = author.insertId;
 
