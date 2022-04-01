@@ -16,14 +16,6 @@ const getNewAuthor = (authorData) => {
   };
 };
 
-const isValid = (firstName, middleName, lastName) => {
-  if (!firstName || typeof firstName !== 'string') return false;
-  if (!lastName || typeof lastName !== 'string') return false;
-  if (middleName && typeof middleName !== 'string') return false;
-
-  return true;
-};
-
 const getAll = async () => {
   const authors = await AuthorM.getAll();
 
@@ -39,12 +31,7 @@ const findById = async (id) => {
 };
 
 const createAuthor = async (first_name, middle_name, last_name) => {
-  const validAuthor = isValid(first_name, middle_name, last_name);
-
-  if (!validAuthor) return false;
-
   const author = await AuthorM.createAuthor(first_name, middle_name, last_name);
-
   return getNewAuthor({id: author.id, firstName: first_name, middleName: middle_name, lastName: last_name})
 };
 
@@ -52,5 +39,4 @@ module.exports = {
   getAll,
   findById,
   createAuthor,
-  isValid,
 }

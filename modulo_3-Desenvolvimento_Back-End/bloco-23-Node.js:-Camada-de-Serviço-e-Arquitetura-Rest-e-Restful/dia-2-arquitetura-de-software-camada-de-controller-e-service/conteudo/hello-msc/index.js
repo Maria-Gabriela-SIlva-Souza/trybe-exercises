@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const AuthorS = require('./services/AuthorsS');
+const { isValidCreateAuthor } = require('./middlewares/validations')
 
 const app = express();
 
@@ -25,7 +26,7 @@ app.get('/authors/:id', async (req, res) => {
   res.status(200).json(author);
 });
 
-app.post('/authors', async (req, res) => {
+app.post('/authors', isValidCreateAuthor, async (req, res) => {
   const { first_name, middle_name, last_name } = req.body;
 
   const author = await AuthorS.createAuthor(first_name, middle_name, last_name);
