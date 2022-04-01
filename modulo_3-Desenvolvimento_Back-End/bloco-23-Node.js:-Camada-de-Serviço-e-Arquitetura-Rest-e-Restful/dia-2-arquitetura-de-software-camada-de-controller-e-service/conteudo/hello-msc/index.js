@@ -1,14 +1,16 @@
+// hello-msc/index.js
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const AuthorModels = require('./models/AuthorModels');
+const AuthorM = require('./models/AuthorM');
 
 const app = express();
 
 app.use(bodyParser.json());
 
 app.get('/authors', async (_req, res) => {
-  const authors = await AuthorModels.getAll();
+  const authors = await AuthorM.getAll();
 
   res.status(200).json(authors);
 });
@@ -16,7 +18,7 @@ app.get('/authors', async (_req, res) => {
 app.get('/authors/:id', async (req, res) => {
   const { id } = req.params;
 
-  const author = await AuthorModels.findById(id);
+  const author = await AuthorM.findById(id);
 
   if (!author) return res.status(404).json({ message: 'Not found' });
 
@@ -26,11 +28,13 @@ app.get('/authors/:id', async (req, res) => {
 app.post('/authors', async (req, res) => {
   const { first_name, middle_name, last_name } = req.body;
 
-  const author = await AuthorModels.createAuthor(first_name, middle_name, last_name);
+  if (!AuthorM.isValid(first_name, middle_name, last_name)) {
+    return res.status(400).json({ message: 'Dados inválidos' });
+  }
 
-  if (!author) return res.status(400).json({ message: 'Dados inválidos' });
+  await AuthorM.createAuthor(first_name, middle_name, last_name);
 
-  res.status(201).json(author);
+  res.status(201).json({ message: 'Pessoa autora criada com sucesso! ' });
 });
 
 const PORT = 3000;
