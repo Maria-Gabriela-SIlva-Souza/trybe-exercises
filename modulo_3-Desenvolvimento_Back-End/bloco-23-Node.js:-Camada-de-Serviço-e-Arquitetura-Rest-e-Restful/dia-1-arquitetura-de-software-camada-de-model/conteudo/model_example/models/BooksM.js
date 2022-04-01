@@ -1,5 +1,5 @@
 const connection = require('./connection');
-const Authors = require('./Author');
+const Authors = require('./AuthorM');
 
 const getAll = async () => {
   // Se não dessestruturarmos esse array a requisição vem com indormações do banco de dados além das pedidas
