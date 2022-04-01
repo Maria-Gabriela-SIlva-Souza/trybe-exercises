@@ -26,8 +26,6 @@ const findById = async (id) => {
 
   const [authorData] = await connection.execute(query, [id]);
 
-  if (authorData.length === 0) return null;
-
   return serialize(authorData)[0];
 };
 

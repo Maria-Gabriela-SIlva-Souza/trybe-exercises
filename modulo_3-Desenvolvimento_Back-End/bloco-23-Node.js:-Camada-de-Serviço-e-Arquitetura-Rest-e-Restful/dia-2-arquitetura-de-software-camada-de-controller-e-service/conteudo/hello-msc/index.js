@@ -20,7 +20,6 @@ app.get('/authors/:id', async (req, res) => {
   const { id } = req.params;
 
   const author = await AuthorS.findById(id);
-
   if (!author) return res.status(404).json({ message: 'Not found' });
 
   res.status(200).json(author);

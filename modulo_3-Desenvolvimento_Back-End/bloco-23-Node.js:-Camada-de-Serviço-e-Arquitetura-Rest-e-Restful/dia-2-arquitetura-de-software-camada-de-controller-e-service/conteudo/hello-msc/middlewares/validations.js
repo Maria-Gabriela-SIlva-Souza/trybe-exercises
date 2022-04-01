@@ -7,6 +7,13 @@ const isValidCreateAuthor = ((req, res, next) => {
   next();
 });
 
+const isValidFindById = ((author) => {
+
+  if (!author) return res.status(404).json({ message: 'Not found' });
+
+});
+
 module.exports = {
   isValidCreateAuthor,
+  isValidFindById
 }
