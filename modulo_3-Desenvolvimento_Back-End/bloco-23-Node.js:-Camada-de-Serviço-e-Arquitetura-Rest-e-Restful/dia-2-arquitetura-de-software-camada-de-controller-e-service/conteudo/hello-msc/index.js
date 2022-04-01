@@ -3,14 +3,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const AuthorM = require('./models/AuthorM');
+const AuthorS = require('./services/AuthorsS');
 
 const app = express();
 
 app.use(bodyParser.json());
 
 app.get('/authors', async (_req, res) => {
-  const authors = await AuthorM.getAll();
+  const authors = await AuthorS.getAll();
 
   res.status(200).json(authors);
 });
@@ -18,7 +18,7 @@ app.get('/authors', async (_req, res) => {
 app.get('/authors/:id', async (req, res) => {
   const { id } = req.params;
 
-  const author = await AuthorM.findById(id);
+  const author = await AuthorS.findById(id);
 
   if (!author) return res.status(404).json({ message: 'Not found' });
 
@@ -28,13 +28,9 @@ app.get('/authors/:id', async (req, res) => {
 app.post('/authors', async (req, res) => {
   const { first_name, middle_name, last_name } = req.body;
 
-  if (!AuthorM.isValid(first_name, middle_name, last_name)) {
-    return res.status(400).json({ message: 'Dados inválidos' });
-  }
+  const author = await AuthorS.createAuthor(first_name, middle_name, last_name);
 
-  await AuthorM.createAuthor(first_name, middle_name, last_name);
-
-  res.status(201).json({ message: 'Pessoa autora criada com sucesso! ' });
+  res.status(201).json(author);
 });
 
 const PORT = 3000;

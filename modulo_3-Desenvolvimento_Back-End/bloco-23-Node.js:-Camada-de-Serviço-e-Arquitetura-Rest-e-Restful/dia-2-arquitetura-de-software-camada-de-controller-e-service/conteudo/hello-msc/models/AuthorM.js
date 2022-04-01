@@ -1,25 +1,7 @@
 const connection = require('./connection');
 
-// Cria uma string com o nome completo da pessoa autora
-
-const getNewAuthor = (authorData) => {
-const { id, firstName, middleName, lastName } = authorData;
-
-const fullName = [firstName, middleName, lastName]
-  .filter((name) => name)
-  .join(' ');
-
-return {
-  id,
-  firstName,
-  middleName,
-  lastName,
-  name: fullName,
- };
-};
-
 // Converte o nome dos campos de snake_case para camelCase
-const serialize = (authorData) => authorData.map((item) => getNewAuthor({
+const serialize = (authorData) => authorData.map((item) => ({
   id: item.id,
   firstName: item.first_name,
   middleName: item.middle_name,
@@ -49,25 +31,16 @@ const findById = async (id) => {
   return serialize(authorData)[0];
 };
 
-const isValid = (firstName, middleName, lastName) => {
-    if (!firstName || typeof firstName !== 'string') return false;
-    if (!lastName || typeof lastName !== 'string') return false;
-    if (middleName && typeof middleName !== 'string') return false;
-
-    return true;
-};
-
-const createAuthor = async (firstName, middleName, lastName) => {
+const createAuthor = async (first_name, middle_name, last_name) => {
   const [author] = await connection.execute(
     'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
-    [firstName, middleName, lastName]
+    [first_name, middle_name, last_name]
   );
-  return getNewAuthor({ id: author.insertId, firstName, middleName, lastName });
+  return ({ id: author.insertId, firstName: first_name, middleName: middle_name, lastName: last_name })
 }
 
 module.exports = {
   getAll,
   findById,
-  isValid,
   createAuthor,
 };
