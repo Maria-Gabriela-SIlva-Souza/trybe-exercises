@@ -3,19 +3,19 @@ const ProductModel = require('../models/productModel');
 
 const router = express.Router();
 
-router.get('/products', async (req, res, next) => {
+router.get('/', async (_req, res) => {
   const products = await ProductModel.getAll();
 
   res.status(200).json(products);
 });
 
-router.get('/products/:id', async (req, res, next) => {
+router.get('/:id', async (req, res) => {
   const product = await ProductModel.getById(req.params.id);
 
   res.status(200).json(product);
 });
 
-router.post('/products', async (req, res) => {
+router.post('/', async (req, res) => {
   const { name, brand } = req.body;
 
   const newProduct = await ProductModel.add(name, brand);
@@ -26,13 +26,13 @@ router.post('/products', async (req, res) => {
   });
 });
 
-router.delete('/products/:id', async (req, res) => {
-  const products = await ProductModel.exclude(req.params.id);
+router.delete('/:id', async (req, res) => {
+  await ProductModel.exclude(req.params.id);
 
   res.status(200).json({ message: 'Produto deletado'});
 });
 
-router.put('/products/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   const { name, brand } = req.body;
 
   const products = await ProductModel.update(req.params.id, name, brand);
