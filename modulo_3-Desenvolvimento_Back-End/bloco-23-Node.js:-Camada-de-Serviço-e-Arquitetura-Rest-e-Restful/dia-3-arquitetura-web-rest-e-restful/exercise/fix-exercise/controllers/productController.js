@@ -21,8 +21,8 @@ router.post('/', async (req, res) => {
   const newProduct = await ProductModel.add(name, brand);
 
   res.status(200).json({ 
-    message: `Produto adicionado:
-    ${newProduct}`
+    message: `Produto adicionado`,
+    newProduct
   });
 });
 
@@ -38,8 +38,8 @@ router.put('/:id', async (req, res) => {
   const products = await ProductModel.update(req.params.id, name, brand);
 
   res.status(200).json({ 
-    message: `Produto alterado:
-    ${products}`
+    message: 'Produto alterado:',
+    products
   });
 });
 
