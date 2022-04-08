@@ -26,6 +26,19 @@ app.get('/:id', (req, res) => {
   })
 })
 
+app.post('/', (req, res) => {
+  const { name, description } = req.body;
+
+  Store.create({ name, description }).then(dados => {
+
+    if(!dados || dados === null) return res.status(500).json({message: 'Deu ruim !'});
+
+    res.status(201).json(dados);
+  }).catch((e) => {
+    res.status(500).json({message: 'Deu ruim !'});
+  })
+})
+
 const PORT = 3000;
 
 app.listen(PORT, () => {
