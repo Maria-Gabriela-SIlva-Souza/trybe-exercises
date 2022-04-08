@@ -17,6 +17,9 @@ app.get('/:id', (req, res) => {
   const { id } = req.params;
 
   Store.findByPk(id).then(dados => {
+
+    if(!dados || dados === null) return res.status(500).json({message: 'Deu ruim !'});
+
     res.status(200).json(dados);
   }).catch((e) => {
     res.status(500).json({message: 'Deu ruim !'});
