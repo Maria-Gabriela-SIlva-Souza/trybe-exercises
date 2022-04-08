@@ -16,6 +16,12 @@ module.exports = {
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
+      {
+        fullName: 'Maria',
+        email: 'maria@test.com',
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     ], {}),
 
   down: async (queryInterface) => queryInterface.bulkDelete('Users', null, {}),
