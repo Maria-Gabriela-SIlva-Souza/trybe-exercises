@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
+    "username": "gabriela",
+    "password": "42274352",
     "database": "orm_example",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
