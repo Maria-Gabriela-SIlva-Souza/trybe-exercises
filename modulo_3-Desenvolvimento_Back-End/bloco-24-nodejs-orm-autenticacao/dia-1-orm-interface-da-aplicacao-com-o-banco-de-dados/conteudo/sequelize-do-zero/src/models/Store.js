@@ -8,6 +8,9 @@ const Store = (sequelize, DataTypes) => {
     },
     {
       timestamps: false,
+    }, 
+    {
+      freezeTableName: true
     }
   );
 
