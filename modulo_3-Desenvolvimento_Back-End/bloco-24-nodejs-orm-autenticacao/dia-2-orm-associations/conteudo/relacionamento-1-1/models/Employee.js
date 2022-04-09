@@ -21,5 +21,12 @@ module.exports = (sequelize, DataTypes) => {
       { foreignKey: 'employeeId', as: 'addresses' });
   };
 
+  // Método usado para o caso de ser uma relação de 1:N
+
+  // Employee.associate = (models) => {
+  //   Employee.hasOne(models.Address,
+  //     { foreignKey: 'employeeId', as: 'addresses' });
+  // };
+
   return Employee;
 };
