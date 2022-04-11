@@ -30,6 +30,12 @@ app.get('/employees/:id', async (req, res) => {
 
     if (!employee)
       return res.status(404).json({ message: 'Funcionário não encontrado' });
+    
+    // Método utilizado para o Lazy Loading
+    if (req.query.includeAddresses === 'true') {
+      const addresses = await Address.findAll({ where: { employeeId: id } });
+      return res.status(200).json({ employee, addresses });
+    }      
 
     return res.status(200).json(employee);
   } catch (e) {
