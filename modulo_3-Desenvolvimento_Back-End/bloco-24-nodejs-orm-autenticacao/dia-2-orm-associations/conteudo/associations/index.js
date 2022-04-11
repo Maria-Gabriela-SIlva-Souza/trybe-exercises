@@ -10,6 +10,7 @@ const { Address, Employee, Book, User } = require('./models');
 const config = require('./config/config');
 
 const app = express();
+app.use(express.json());
 
 // Criação Unmanaged / Managed transactions
 const sequelize = new Sequelize(config.development);
