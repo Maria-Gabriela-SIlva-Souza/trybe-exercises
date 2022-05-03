@@ -4,6 +4,7 @@ const Atributtes = {
   title: DataTypes.STRING,
   author: DataTypes.STRING,
   pageQuantity: DataTypes.INTEGER,
+  publisher: DataTypes.STRING,
   createdAt: DataTypes.DATE,
   updatedAt: DataTypes.DATE,
 };
