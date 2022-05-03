@@ -1,9 +1,15 @@
 const BooksService = require('../services/BooksService');
 
-const getAll = async (_req, res) => {
-  const books = await BooksService.getAll();
+const getAll = async (req, res) => {
+  const { author } = req.query;
 
-  if(!books || books == '') return res.status(404).json({ message: 'Book not found' });
+  let books;
+
+  if (author) {
+    books = await BooksService.getByAuthor(author);
+  } else {
+    books = await BooksService.getAll();
+  }
 
   res.status(200).json(books);
 };
@@ -54,5 +60,5 @@ module.exports = {
   getById,
   create,
   update,
-  remove
+  remove,
 };
