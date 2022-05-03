@@ -1,6 +1,6 @@
 const booksRouter = require('express').Router();
 
-const { getAll, getById } = require('../controller/BooksController');
+const { getAll, getById, create } = require('../controller/BooksController');
 
 booksRouter.get(
   '/',
@@ -10,6 +10,11 @@ booksRouter.get(
 booksRouter.get(
   '/:id',
   getById,
+);
+
+booksRouter.post(
+  '/',
+  create,
 );
 
 module.exports = booksRouter;

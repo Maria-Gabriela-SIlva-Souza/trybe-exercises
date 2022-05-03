@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
   const Books = sequelize.define('Books', 
     Atributtes,
     {
-      timestamps: false,
+      timestamps: true,
       tableName: 'Books',
     }
   );
