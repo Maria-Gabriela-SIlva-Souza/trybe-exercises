@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "sequelize-cli": "^6.4.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
   }
 }
