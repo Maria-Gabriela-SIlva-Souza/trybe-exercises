@@ -1,7 +1,7 @@
 const { Books } = require('../models');
 
 const getAll = async () => {
-  const books = await Books.findAll();
+  const books = await Books.findAll({ order: [['title', 'ASC']] });
   return books;
 };
 
@@ -11,7 +11,10 @@ const getById = async (id) => {
 };
 
 const getByAuthor = async (author) => {
-  const books = await Books.findAll({ where: { author } });
+  const books = await Books.findAll({ 
+    where: { author },
+    order: [['title', 'ASC']]
+  });
   return books;
 };
 
