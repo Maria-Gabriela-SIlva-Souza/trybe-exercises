@@ -35,13 +35,18 @@ createdAt: ${createdAt}`);
 
 characters.forEach(printCharacter);
 
+
 --------------------------------------------------------------------------------------------------------
+
 
 Exercício 2: Crie uma enum que represente os meses do ano.
 
+
 --------------------------------------------------------------------------------------------------------
 
+
 Exercício 3: Crie uma enum que represente as estações climáticas do ano.
+
 
 --------------------------------------------------------------------------------------------------------
 
@@ -71,3 +76,30 @@ Estações do ano no Hemisfério Sul
     | Verão     | 21 de dezembro | 20 de março    |
 
 Fonte: https://brasilescola.uol.com.br/geografia/estacoes-ano.htm
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+Exercício 5: Crie um script para converter unidades de medida de comprimento:
+Esse script deverá se chamar length.ts;
+Ele deverá possuir uma função chamada convert que recebe como parâmetro:
+valor - number
+unidade base - string
+unidade para a conversão - string
+Tabela de conversão:
+Copiar
+    | Nome                     | Símbolo | Valor   |
+    | ------------------------ | ------- | ------- |
+    | Quilômetro               | km      | 1000m   |
+    | Hectômetro               | hm      | 100m    |
+    | Decâmetro                | dam     | 10m     |
+    | Metro                    | m       | 1m      |
+    | Decímetro                | dm      | 0,1m    |
+    | Centímetro               | cm      | 0,01m   |
+    | Milímetro                | mm      | 0,001m  |
+
+
+--------------------------------------------------------------------------------------------------------
+
+
