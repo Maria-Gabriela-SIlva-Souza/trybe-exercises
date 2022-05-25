@@ -37,3 +37,37 @@ characters.forEach(printCharacter);
 
 --------------------------------------------------------------------------------------------------------
 
+Exercício 2: Crie uma enum que represente os meses do ano.
+
+--------------------------------------------------------------------------------------------------------
+
+Exercício 3: Crie uma enum que represente as estações climáticas do ano.
+
+--------------------------------------------------------------------------------------------------------
+
+Exercício 4: Utilizando as enums criadas nos exercícios anteriores e o pacote readline-sync, que cria uma interface para ler o que for inserido no console (mais informações, veja a documentação), crie um programa que quando a pessoa usuária escolher o mês do ano e o hemisfério no terminal:
+Retorne em que estação aquele mês se encontra.
+
+Caso seja um mês que possua duas estações retorne ambas.
+
+Para referência:
+
+Estações do ano no Hemisfério Norte
+
+    | Estação   | Início         | Término        |
+    | --------- | -------------- | -------------- |
+    | Outono    | 23 de setembro | 21 de dezembro |
+    | Inverno   | 21 de dezembro | 20 de março    |
+    | Primavera | 20 de março    | 21 de junho    |
+    | Verão     | 21 de junho    | 23 de setembro |
+
+Estações do ano no Hemisfério Sul
+
+    | Estação   | Início         | Término        |
+    | --------- | -------------- | -------------- |
+    | Outono    | 20 de março    | 21 de junho    |
+    | Inverno   | 21 de junho    | 22 de setembro |
+    | Primavera | 22 de setembro | 21 de dezembro |
+    | Verão     | 21 de dezembro | 20 de março    |
+
+Fonte: https://brasilescola.uol.com.br/geografia/estacoes-ano.htm
