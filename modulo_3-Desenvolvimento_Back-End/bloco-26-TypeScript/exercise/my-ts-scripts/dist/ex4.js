@@ -47,4 +47,6 @@ Object.entries(chosenHemisphereSeasons).map((entry) => {
     // abaixo irá adicionar
     if (months.includes(month))
         console.log(seasons);
+    console.log(`Object.values(Months) ${monthsNames}`);
+    console.log(`seasonsSouth ${seasonsSouth}`);
 });
