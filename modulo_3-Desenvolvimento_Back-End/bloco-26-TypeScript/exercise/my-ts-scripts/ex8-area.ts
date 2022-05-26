@@ -1,7 +1,8 @@
+import readline from "readline-sync";
+
+const units = ["km²", "hm²", "dam²", "m²", "dm²", "cm²", "mm²"];
+
 function convertArea(value: number, fromUnit: string, toUnit: string): number {
-
-  const units = ["km²", "hm²", "dam²", "m²", "dm²", "cm²", "mm²"];
-
   const fromIndex = units.indexOf(fromUnit);
   const toIndex = units.indexOf(toUnit);
   const exponent = (toIndex - fromIndex);
@@ -9,4 +10,29 @@ function convertArea(value: number, fromUnit: string, toUnit: string): number {
   return value * Math.pow(100, exponent);
 }
 
-console.log(convertArea(1, "dam²", "mm²"))
+// Ex10
+
+function exec() {
+  // pegamos o valor a ser convertido digitado pela pessoa usuária
+  const value = readline.questionFloat("Digite o valor a ser convertido: \n");
+
+  // pedimos que a pessoa usuária escolha a unidade base
+  const fromUnitChoiceIndex = readline.keyInSelect(units, "Escolha um número para a unidade base:");
+
+  // pedimos que a pessoa usuária escolha a unidade para conversão
+  const toUnitChoiceIndex = readline.keyInSelect(units, "Escolha um número para a conversão:");
+
+
+  const fromUnitChoice = units[fromUnitChoiceIndex];
+  const toUnitChoice = units[toUnitChoiceIndex];
+
+  const result = convertArea(value, fromUnitChoice, toUnitChoice)
+
+  // montamos a mensagem de saída
+  const message = `${value}${fromUnitChoice} é igual a ${result}${toUnitChoice}`
+
+  // printamos a mensagem de saída no terminal
+  console.log(message);
+}
+
+exec();
