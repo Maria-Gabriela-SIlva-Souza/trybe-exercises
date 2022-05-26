@@ -125,3 +125,97 @@ Copiar
 --------------------------------------------------------------------------------------------------------
 
 
+Exercício 7: Crie um script para converter unidades de medida de capacidade:
+Esse script deverá se chamar capacity.ts;
+Ele deverá possuir uma função chamada convert que recebe como parâmetro:
+
+valor - number
+unidade base - string
+unidade para a conversão - string
+
+Tabela de conversão:
+
+    | Nome                     | Símbolo | Valor   |
+    | ------------------------ | ------- | ------- |
+    | Quilolitro               | kl      | 1000l   |
+    | Hectolitro               | hl      | 100l    |
+    | Decalitro                | dal     | 10l     |
+    | Litro                    | l       | 1l      |
+    | Decilitro                | dl      | 0,1l    |
+    | Centilitro               | cl      | 0,01l   |
+    | Mililitro                | ml      | 0,001l  |
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+Exercício 8: Crie um script para converter unidades de medida de área:
+Esse script deverá se chamar area.ts;
+Ele script deverá possuir uma função chamada convert que recebe como parâmetro:
+
+valor - number
+unidade base - string
+unidade para a conversão - string
+
+Obs: atente-se à conversão de metros quadrados, que deve ser realizada de 100 em 100.
+
+Tabela de conversão:
+
+    | Nome                     | Símbolo |  Valor  |
+    | ------------------------ | ------- | ------- |
+    | Quilômetro quadrado      | km²     | 10⁶ m²  |
+    | Hectômetro quadrado      | hm²     | 10⁴ m²  |
+    | Decâmetro quadrado       | dam²    | 10² m²  |
+    | Metro quadrado           | m²      | 1m²     |
+    | Decímetro quadrado       | dm²     | 10⁻² m² |
+    | Centímetro quadrado      | cm²     | 10⁻⁴ m² |
+    | Milímetro quadrado       | mm²     | 10⁻⁶ m² |
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+Exercício 9: Crie um script para converter unidades de medida de volume:
+Esse script deverá se chamar volume.ts;
+Ele deverá possuir uma função chamada convert que recebe como parâmetro:
+
+valor - number
+unidade base - string
+unidade para a conversão - string
+
+Obs: atente-se à conversão de metros cúbicos, que deve ser realizada de 1000 em 1000.
+
+Tabela de conversão:
+
+    | Nome                     | Símbolo |  Valor  |
+    | ------------------------ | ------- | ------- |
+    | Quilômetro cúbico        | km³     | 10⁹ m³  |
+    | Hectômetro cúbico        | hm³     | 10⁶ m³  |
+    | Decâmetro cúbico         | dam³    | 10³ m³  |
+    | Metro cúbico             | m³      | 1m³     |
+    | Decímetro cúbico         | dm³     | 10⁻³ m³ |
+    | Centímetro cúbico        | cm³     | 10⁻⁶ m³ |
+    | Milímetro cúbico         | mm³     | 10⁻⁹ m³ |
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+Exercício 10: Vamos tornar nossos scripts de unidades de medida mais interativos! Vamos adicionar input de quem usa o script. Para isso, utilize o pacote readline-sync, documentação.
+Em cada script, crie uma função chamada exec que:
+
+Capta as entradas da pessoa usuária via terminal;
+Chama a função de conversão passando as entradas da pessoa usuária como parâmetro;
+Exibe uma mensagem com o resultado. Ex: "1km é igual a 1000m.";
+Não se esqueça de chamar a função exec ao final do script. exec();"
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+Exercício 11: Crie um arquivo index.ts que pergunta qual conversão a pessoa usuária deseja realizar, e chama o script correspondente:
+
+O script deve ser acionado por meio do comando npm start no package.json;
+Utilize o readline-sync para realizar o input de dados;
+Quando executado, o script deve exibir uma lista numerada dos scripts disponíveis;
+Você pode utilizar o require para executar o script em questão.
