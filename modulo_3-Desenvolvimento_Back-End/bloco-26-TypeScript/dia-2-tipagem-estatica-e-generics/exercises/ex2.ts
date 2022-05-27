@@ -1,0 +1,37 @@
+import Car from "./ex1";
+import Cor from "./ex1-Cor";
+import Direcao from "./ex1-Direcao";
+import Porta from "./ex1-Porta";
+
+const gol = new Car("Volkswagen", Cor.PRATA, 4); 
+
+gol.openTheDoor(Porta.MOTORISTA);
+gol.closeTheDoor(Porta.MOTORISTA);
+gol.turnOn();
+gol.speedUp();
+gol.speedDown();
+gol.turn(Direcao.ESQUERDA);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Direcao.DIREITA);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Direcao.DIREITA);
+gol.speedDown();
+gol.stop();
+gol.openTheDoor(Porta.ATRASCAR);
+gol.closeTheDoor(Porta.ATRASCAR);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Direcao.DIREITA);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Direcao.ESQUERDA);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Direcao.DIREITA);
+gol.speedDown();
+gol.stop();
+gol.openTheDoor(Porta.ATRASCAR);
+gol.closeTheDoor(Porta.ATRASCAR);
+gol.speedUp();
