@@ -1,5 +1,3 @@
-// Exercício 1
-
 import Cor from "./ex1-Cor";
 import Direcao from "./ex1-Direcao";
 import Porta from "./ex1-Porta";
