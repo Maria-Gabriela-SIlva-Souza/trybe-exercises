@@ -9,7 +9,7 @@ class Carro {
   cor: Cor;
   portas: number;
 
-  constructor(marca: string, portas: number, cor: Cor) {
+  constructor(marca: string, cor: Cor, portas: number) {
     this.marca = marca;
     this.portas = portas;
     this.cor = cor;
