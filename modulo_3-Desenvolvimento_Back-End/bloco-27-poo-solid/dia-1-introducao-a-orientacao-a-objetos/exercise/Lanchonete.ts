@@ -47,9 +47,9 @@ class Pedido {
   private _cliente: Cliente;
   private _itemPedido: ItemPedido[] = [];
   private _pagamento: string;
-  private _desconto?: number | undefined;
+  private _desconto = 0;
 
-  constructor(cliente: Cliente, itemPedido: ItemPedido[], pagamento: string, desconto?: number | undefined) {
+  constructor(cliente: Cliente, itemPedido: ItemPedido[], pagamento: string, desconto: number) {
     this._cliente = cliente;
     this._itemPedido = itemPedido;    
     this._pagamento = pagamento;
@@ -83,12 +83,26 @@ class Pedido {
     this._pagamento = value;
   }
 
-  public get desconto(): number | undefined {
+  public get desconto(): number {
     return this._desconto;
   }
-  public set desconto(value: number | undefined) {
+  public set desconto(value: number) {
     this._desconto = value;
   }
+
+  calculateTotal(): number {
+    return this.itemPedido.
+      reduce((previousValue, item) => {
+        const total = previousValue += item.preco_1;
+
+        return total;
+      }, 0)
+  }
+
+  calculoComDesconto(): number {
+    return this.calculateTotal() * (1 - this.desconto);
+  }
+
 }
 
 
