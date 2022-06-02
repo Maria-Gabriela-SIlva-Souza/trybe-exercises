@@ -1,11 +1,3 @@
-interface Funcionario {
-  registro: number;
-  salario: number;
-  dataAdmissão: Date;
-
-  gerarRegistro(): string; 
-}
-
 export default class Disciplina {
 
   constructor(private _name: string) { }
