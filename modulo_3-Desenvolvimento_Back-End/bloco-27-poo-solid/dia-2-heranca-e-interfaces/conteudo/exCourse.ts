@@ -1,11 +1,11 @@
-interface Contract {
-  subject: string;
-  clauses: string[];
-  signatories: Person[];
-  describe(): void;
+interface Contrato {
+  assunto: string;
+  clausula: string[];
+  assinantes: Pessoa[];
+  descricao(): void;
 }
 
-class Person {
+class Pessoa {
   private _name;
   constructor(name: string) {
     this._name = name;
@@ -13,7 +13,7 @@ class Person {
   get name() { return this._name; }
 }
 
-class NaturalPerson extends Person {
+class PessoaFisica extends Pessoa {
   private _cpf;
   constructor(name: string, cpf: string) {
     super(name);
@@ -22,7 +22,7 @@ class NaturalPerson extends Person {
   get cpf() { return this._cpf; }
 }
 
-class LegalPerson extends Person {
+class PessoaJuridica extends Pessoa {
   private _cnpj;
   constructor(name: string, cnpj: string) {
     super(name);
@@ -30,49 +30,49 @@ class LegalPerson extends Person {
   }
 }
 
-class SalesContract implements Contract {
-  private _signatories: Person[];
-  private _clauses: string[];
+class ContratoDEVenda implements Contrato {
+  private _assinantes: Pessoa[];
+  private _clausula: string[];
 
   constructor() {
-    this._signatories = [];
-    this._clauses = [];
+    this._assinantes = [];
+    this._clausula = [];
   }
 
-  get signatories() { return [...this._signatories]; }
-  get clauses() { return [...this._clauses]; }
-  get subject() { return "Sales"; }
+  get assinantes() { return [...this._assinantes]; }
+  get clausula() { return [...this._clausula]; }
+  get assunto() { return "Sales"; }
 
-  sign(signatory: Person) { this._signatories.push(signatory); }
+  sign(signatory: Pessoa) { this._assinantes.push(signatory); }
   addClause(clause: string) {
-    if (this._signatories.length > 0) return;
-    this._clauses.push(clause);
+    if (this._assinantes.length > 0) return;
+    this._clausula.push(clause);
   }
 
-  describe() {
+  descricao() {
     console.log('--------------------');
-    console.log(`Contrato: ${this.subject}`);
-    this.clauses.forEach((clause) => { console.log(`Cláusula: ${clause}`) });
-    this.signatories.forEach((signatory) => { console.log(`Assinado por: ${signatory.name}`) });
+    console.log(`Contrato: ${this.assunto}`);
+    this.clausula.forEach((clause) => { console.log(`Cláusula: ${clause}`) });
+    this.assinantes.forEach((signatory) => { console.log(`Assinado por: ${signatory.name}`) });
     console.log('--------------------\n');
   }
 }
 
-const s1 = new SalesContract();
-const pp1 = new NaturalPerson('Tony', '123456789');
-const pp2 = new NaturalPerson('Lilly', '987654321');
-const lp = new LegalPerson('International Sales SA', '23961237162378');
+const s1 = new ContratoDEVenda();
+const pp1 = new PessoaFisica('Tony', '123456789');
+const pp2 = new PessoaFisica('Lilly', '987654321');
+const lp = new PessoaJuridica('International Sales SA', '23961237162378');
 
-s1.describe();
+s1.descricao();
 s1.addClause('Foo');
 s1.addClause('Bar');
-s1.describe();
+s1.descricao();
 s1.sign(pp1);
 s1.sign(pp2);
-s1.describe();
+s1.descricao();
 s1.addClause('Baz');
 s1.sign(lp);
-s1.describe();
+s1.descricao();
 
 /*
 Saída:
