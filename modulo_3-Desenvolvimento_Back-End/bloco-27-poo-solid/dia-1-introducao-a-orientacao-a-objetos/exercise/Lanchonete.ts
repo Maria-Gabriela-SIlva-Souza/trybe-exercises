@@ -1,4 +1,4 @@
-class Cliente {
+export class Cliente {
   private _nome: string;
 
   constructor(nome: string) {
@@ -16,7 +16,7 @@ class Cliente {
   }
 }
 
-class ItemPedido {
+export class ItemPedido {
   private _nomeItem: string;
   private _preco: number;
 
@@ -43,7 +43,7 @@ class ItemPedido {
   }
 }
 
-class Pedido {
+export class Pedido {
   private _cliente: Cliente;
   private _itemPedido: ItemPedido[] = [];
   private _pagamento: string;
@@ -104,14 +104,3 @@ class Pedido {
   }
 
 }
-
-
-const cliente = new Cliente('João');
-
-const sandwiche = new ItemPedido('Sandwiche Natural', 5.00);
-const juice = new ItemPedido('Suco de Abacaxí', 5.00);
-const dessert = new ItemPedido('Gelatina de Uva', 2.50);
-
-const order = new Pedido(cliente, [sandwiche, juice, dessert], 'dinheiro', 0.10);
-
-console.log(order);

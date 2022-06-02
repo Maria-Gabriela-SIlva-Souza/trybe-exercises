@@ -56,13 +56,3 @@ export default class Estudante extends Pessoa {
     return `STU${randomStr}`;
   }
 }
-
-// 27.1
-// const estdante1 = new Estudante('1a2a3a', 'Maria', [4, 5, 6, 7], [10, 10])
-// const estdante2 = new Estudante('1a2a3a4a', 'João', [4, 7, 7, 7], [6, 6])
-
-// console.log(estdante1)
-// console.log(estdante2)
-
-// console.log(`A soma das notas de ${estdante1.nome} é: ${estdante1.somaNotas()}`)
-// console.log(`A média das notas de ${estdante1.nome} é: ${estdante1.mediaNotas()}`)

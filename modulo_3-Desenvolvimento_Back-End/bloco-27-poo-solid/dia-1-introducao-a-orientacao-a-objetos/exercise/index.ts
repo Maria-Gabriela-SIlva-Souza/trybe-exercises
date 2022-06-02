@@ -1,5 +1,59 @@
 import Pessoa from './Pessoa';
 import Estudante from './Estudantes';
+import Data from './Data';
+import { Cliente, ItemPedido, Pedido } from './Lanchonete';
+
+//27.1 ==> Data testes
+const testDate = new Data(29, 1, 1989);
+
+console.log(testDate);
+console.log('Dia: ', testDate.dia);
+console.log('Mês: ', testDate.mes);
+console.log('Mês por extenso: ', testDate.getMonthName());
+console.log('Ano: ', testDate.ano);
+console.log('É ano bissexto: ', testDate.isLeapYear() ? 'Sim' : 'Não');
+console.log(testDate.format('dd/mm/aaaa'));
+console.log(testDate.format('dd-mm-aaaa'));
+console.log(testDate.format('aaaa/mm/dd'));
+console.log(testDate.format('aaaa-mm-dd'));
+console.log(testDate.format('dd de M de aa'));
+console.log(testDate.format('dd, M de aaaa'));
+
+const otherDate = new Data(30, 1, 2021);
+const compared = testDate.compare(otherDate);
+const compareStates = ['anterior', 'igual', 'posterior'];
+
+console.log(`A primeira data é ${compareStates[compared + 1]} a segunda.`);
+
+const invalidDate = new Data(31, 2, 2021); // data inválida
+
+console.log('Teste data inválida: ', invalidDate);
+console.log(invalidDate.format('a m d')); // formato inválido
+
+
+// 27.1 ==> Estudantes testes
+// const estdante1 = new Estudante('1a2a3a', 'Maria', [4, 5, 6, 7], [10, 10])
+// const estdante2 = new Estudante('1a2a3a4a', 'João', [4, 7, 7, 7], [6, 6])
+
+// console.log(estdante1)
+// console.log(estdante2)
+
+// console.log(`A soma das notas de ${estdante1.nome} é: ${estdante1.somaNotas()}`)
+// console.log(`A média das notas de ${estdante1.nome} é: ${estdante1.mediaNotas()}`)
+
+
+//27.1 ==> Lanchonete teste
+const cliente = new Cliente('João');
+
+const sandwiche = new ItemPedido('Sandwiche Natural', 5.00);
+const juice = new ItemPedido('Suco de Abacaxí', 5.00);
+const dessert = new ItemPedido('Gelatina de Uva', 2.50);
+
+const order = new Pedido(cliente, [sandwiche, juice, dessert], 'dinheiro', 0.10);
+
+console.log(order);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 //27.2 ==> Ex1
 const maria = new Pessoa('Maria da Consolação', new Date('1980/01/25'));
