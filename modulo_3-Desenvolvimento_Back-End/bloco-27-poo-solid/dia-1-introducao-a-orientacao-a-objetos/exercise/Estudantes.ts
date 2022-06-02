@@ -1,15 +1,14 @@
-class Estudante {
+import Pessoa from "./Pessoa";
+
+export default class Estudante extends Pessoa {
 
   private _matricula: string;
-  private _nome: string;
   private _notaProva: number[] = Array();
   private _notaTrabalho: number[] = Array();
 
-  constructor( _matricula: string, _nome: string, _notaProva: number[], _notaTrabalho: number[]) {
-    this._matricula = _matricula;
-    this._nome = _nome;
-    this.notaProva = _notaProva;
-    this.notaTrabalho = _notaTrabalho;
+  constructor(nome: string, dataNascimento: Date) {
+    super(nome, dataNascimento);
+    this._matricula = this.numeroMatricula();
   }
 
   public get matricula(): string {
@@ -17,13 +16,6 @@ class Estudante {
   }
   public set matricula(value: string) {
     this._matricula = value;
-  }
-
-  public get nome(): string {
-    return this._nome;
-  }
-  public set nome(value: string) {
-    this._nome = value;
   }
 
   public get notaProva(): number[] {
@@ -57,13 +49,20 @@ class Estudante {
     const qntNotas = this._notaProva.length + this._notaTrabalho.length;
     return notas / qntNotas;
   }
+
+  numeroMatricula(): string {
+    const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
+
+    return `STU${randomStr}`;
+  }
 }
 
-const estdante1 = new Estudante('1a2a3a', 'Maria', [4, 5, 6, 7], [10, 10])
-const estdante2 = new Estudante('1a2a3a4a', 'João', [4, 7, 7, 7], [6, 6])
+// 27.1
+// const estdante1 = new Estudante('1a2a3a', 'Maria', [4, 5, 6, 7], [10, 10])
+// const estdante2 = new Estudante('1a2a3a4a', 'João', [4, 7, 7, 7], [6, 6])
 
 // console.log(estdante1)
 // console.log(estdante2)
 
-console.log(`A soma das notas de ${estdante1.nome} é: ${estdante1.somaNotas()}`)
-console.log(`A média das notas de ${estdante1.nome} é: ${estdante1.mediaNotas()}`)
+// console.log(`A soma das notas de ${estdante1.nome} é: ${estdante1.somaNotas()}`)
+// console.log(`A média das notas de ${estdante1.nome} é: ${estdante1.mediaNotas()}`)
