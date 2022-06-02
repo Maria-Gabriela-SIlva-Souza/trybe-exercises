@@ -2,6 +2,7 @@ import Pessoa from './Pessoa';
 import Estudante from './Estudantes';
 import Data from './Data';
 import { Cliente, ItemPedido, Pedido } from './Lanchonete';
+import Disciplina from './Funcionario';
 
 //27.1 ==> Data testes
 const testDate = new Data(29, 1, 1989);
@@ -80,3 +81,10 @@ console.log(lucas);
 console.log(jessica);
 console.log(tamires);
 console.log(fernando);
+
+//27.2 ==> Ex3
+const matematica = new Disciplina('Matematica');
+const historia = new Disciplina('História');
+const filosofia = new Disciplina('Filosofia');
+
+console.log(matematica);
