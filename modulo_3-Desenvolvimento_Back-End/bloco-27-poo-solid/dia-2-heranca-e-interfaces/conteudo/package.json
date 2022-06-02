@@ -1,0 +1,18 @@
+{
+  "name": "conteudo",
+  "version": "1.0.0",
+  "description": "1. Crie uma classe chamada Superclass.   - A Superclass deve possuir um atributo público isSuper   - isSuper deve ser setado como true na inicialização.   - A Superclass deve possuir um método público chamado sayHello, que deve imprimir \"Olá mundo!\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/node": "^17.0.38",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
+  }
+}
