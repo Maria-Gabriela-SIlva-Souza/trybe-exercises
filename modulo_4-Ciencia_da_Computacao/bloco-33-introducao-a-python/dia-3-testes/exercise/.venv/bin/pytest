@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' /home/maria/trybe/trybe-exercises/modulo_4-Ciencia_da_Computacao/bloco-33-introducao-a-python/dia-3-testes/exercise/.venv/bin/python3 "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from pytest import console_main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(console_main())
