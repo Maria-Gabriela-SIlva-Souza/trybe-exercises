@@ -7,9 +7,9 @@ regex = re.compile(
 
 def validando_email(email):
     if re.fullmatch(regex, email):
-        print("Valid email")
+        return("Valid email")
     else:
-        print("Invalid email")
+        return("Invalid email")
 
 
-validando_email("mgabiss10@gmail.com")
+print(validando_email("mgabi***ss10@gmail.com"))
