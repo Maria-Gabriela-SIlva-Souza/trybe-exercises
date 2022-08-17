@@ -12,3 +12,7 @@ Todos os atributos devem ser privados.
     ligar_desligar - alterna o estado da TV entre ligado e desligado (True/False).
 
 
+Exercício 2: Defina uma classe Estatistica que calcule média, mediana e moda de uma lista de números.
+
+
+Exercício 3: Lembra do exercício dos gráficos? De semelhante modo, vamos implementar os objetos das seguintes figuras geométricas?

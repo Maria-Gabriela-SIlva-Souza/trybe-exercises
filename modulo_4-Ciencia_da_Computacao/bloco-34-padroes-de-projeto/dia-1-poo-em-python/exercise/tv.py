@@ -18,9 +18,17 @@ class TV:
             self.__canal = param
         else:
             raise ValueError("Valor de canal está fora da grade")
+    # OUTRA FORMA
+    # def modificar_canal(self, canal):
+    #     if canal <= 1 or canal >= 99:
+    #         raise ValueError('Canal indisponível')
+    #     self.__canal = canal
 
     def ligar_desligar(self):
         if self.__ligada is True:
             return False
         else:
             return True
+    # OUTRA FORMA
+    # def ligar_desligar(self):
+    #     self.__ligada = not self.__ligada
