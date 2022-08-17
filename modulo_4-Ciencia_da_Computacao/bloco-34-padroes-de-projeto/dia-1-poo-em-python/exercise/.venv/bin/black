@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' /home/maria/trybe/trybe-exercises/modulo_4-Ciencia_da_Computacao/bloco-34-padroes-de-projeto/dia-1-poo-em-python/exercise/.venv/bin/python "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from black import patched_main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(patched_main())
