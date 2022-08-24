@@ -8,3 +8,5 @@ Exercício 4: Agora que você tem duas formas diferentes de dar cartas para o se
 
 Exercício 5: Você tem a implementação de uma classe capaz de renderizar imagens através de uma interface que utiliza o método draw. Porém, no momento ela só suporta formato PNG e você também precisa ser capaz de renderizar imagens em SVG. Altere o código, sem modificar a classe SvgImage, para que isso seja possível.
 😎 Dica: Se você garantir que a imagem SVG seja renderizada utilizando a mesma interface que a imagem PNG, a imagem se tornará compatível.
+
+Exercício 6: Suponha que você está trabalhando em um sistema de orçamentos que faz cálculos de impostos e precisa ser refatorado para adicionar novos, que no caso são o PIS (0,65%) e o COFINS (3%). Mas durante a refatoração, você se depara com uma má prática de código. Encontre essa má prática e a solucione em conjunto com a refatoração.
