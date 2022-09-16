@@ -9,6 +9,11 @@ const errorMiddleware = require('./middlewares/error');
 
 app.use(express.json());
 
+app.get('/', (_req, res) => {
+  res.status(200).json({ "message": "Salve!" });
+});
+
+
 app.get('/ping', (_req, res) => {
   res.status(200).json({ "message": "pong!" });
 });
