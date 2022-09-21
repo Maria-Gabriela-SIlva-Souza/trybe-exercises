@@ -7,4 +7,7 @@ response = requests.get("http://books.toscrape.com/")
 
 
 selector = parsel.Selector(text=response.text)
-print(selector.css('img.thumbnail').getall()[0])
+selectorPrint = selector.css('img.thumbnail').getall()
+
+for thumbnail in selectorPrint:
+    print(thumbnail)
