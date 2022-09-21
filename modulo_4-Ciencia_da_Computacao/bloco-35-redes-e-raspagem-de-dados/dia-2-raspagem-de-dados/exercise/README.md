@@ -33,3 +33,8 @@ Exercício 6: Escreva um programa que se conecte ao banco de dados library e lis
 Exercício 7: Faça o cálculo de quantos livros publicados (STATUS = PUBLISH) temos em nosso banco de dados por categoria. Ordene-os de forma decrescente de acordo com a quantidade.
 
   ⚠️ Você pode utilizar agreggation framework para auxiliar neste exercício.
+
+
+Exercício 8: Agora um desafio! Vá ao site https://en.wikipedia.org/wiki/Gallery_of_sovereign_state_flags e recupere as imagens de todas as bandeiras.
+
+
