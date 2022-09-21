@@ -1,24 +1,24 @@
 import requests
-# import time
+import time
 
 
 # Problemas quando realizamos requisições demais ao mesmo tempo
-# for _ in range(15):
-#     response = requests.get("https://www.cloudflare.com/rate-limit-test/")
-#     print(response.status_code)
+for _ in range(15):
+    response = requests.get("https://www.cloudflare.com/rate-limit-test/")
+    print(response.status_code)
 
 # Resolução
-# for _ in range(15):
-#     response = requests.get("https://www.cloudflare.com/rate-limit-test/")
-#     print(response.status_code)
-#     time.sleep(6)
+for _ in range(15):
+    response = requests.get("https://www.cloudflare.com/rate-limit-test/")
+    print(response.status_code)
+    time.sleep(6)
 
 
 # TIMEOUT
 
 # Requisição com problemas por timeout
-# response = requests.get("https://httpbin.org/delay/10", timeout=2)
-# print(response.status_code)
+response = requests.get("https://httpbin.org/delay/10", timeout=2)
+print(response.status_code)
 
 # Resolução
 try:
