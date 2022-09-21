@@ -22,3 +22,6 @@ Exercício 4: Baseando-se em uma página contendo detalhes sobre um livro (http:
   Exemplo:
 
     The Grand Design,13.76,THE FIRST MAJOR WORK IN NEARLY A DECADE BY O...
+
+
+Exercício 5: Modifique o exercício anterior para retornar também quantos livros estão disponíveis, apresentando como último campo no retorno.
