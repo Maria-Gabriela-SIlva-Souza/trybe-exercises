@@ -28,3 +28,8 @@ Exercício 5: Modifique o exercício anterior para retornar também quantos livr
 
 
 Exercício 6: Escreva um programa que se conecte ao banco de dados library e liste os livros da coleção books para uma determinada categoria recebida por uma pessoa usuária. Somente o título dos livros deve ser exibido.
+
+
+Exercício 7: Faça o cálculo de quantos livros publicados (STATUS = PUBLISH) temos em nosso banco de dados por categoria. Ordene-os de forma decrescente de acordo com a quantidade.
+
+  ⚠️ Você pode utilizar agreggation framework para auxiliar neste exercício.
